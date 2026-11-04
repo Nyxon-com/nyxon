@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="it" data-lang="it">
+<html lang="it" data-lang="it" data-title-it="Nyxon — sistemi per server e commissioni" data-title-en="Nyxon — server systems and commissions" data-desc-it="Portfolio di Nyxon. Plugin Paper." data-desc-en="Nyxon's portfolio. Paper plugins.">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nyxon — sistemi per server e commissioni</title>
   <meta name="description" content="Portfolio di Nyxon. Plugin Paper e il server RPG ValaryRPG." />
-  <meta name="theme-color" content="#1E3A8A" />
+  <meta name="theme-color" content="#000000" />
   <link rel="canonical" href="https://nyxon-com.github.io/nyxon/" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231E3A8A'/%3E%3Ctext x='7' y='23' font-family='monospace' font-size='18' fill='%23F8FAFC'%3EN%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,12 +26,12 @@
   <a class="skip en" href="#lavori">Skip to the work</a>
 
   <header class="mast">
-    <a class="mark" href="#top">Nyxon</a>
+    <a class="mark" href="index.html">Nyxon</a>
     <nav aria-label="Sezioni">
-      <a href="#lavori"><span class="it">Lavori</span><span class="en">Work</span></a>
-      <a href="#server"><span class="it">Server</span><span class="en">Server</span></a>
-      <a href="#pratica"><span class="it">Pratica</span><span class="en">Practice</span></a>
-      <a href="#contatto"><span class="it">Contatto</span><span class="en">Contact</span></a>
+      <a href="index.html#lavori" aria-current="page"><span class="it">Lavori</span><span class="en">Work</span></a>
+      <a href="server.html"><span class="it">Server</span><span class="en">Server</span></a>
+      <a href="siti.html"><span class="it">Siti</span><span class="en">Sites</span></a>
+      <a href="index.html#contatto"><span class="it">Contatto</span><span class="en">Contact</span></a>
     </nav>
     <div class="lang" role="group" aria-label="Lingua">
       <button type="button" data-lang="it" aria-pressed="true">IT</button>
@@ -44,8 +44,8 @@
       <p class="kicker"><span class="it">Catalogo 04.11.26</span><span class="en">Catalog 04.11.26</span></p>
       <h1><span class="name">Nyxon</span></h1>
       <p class="lede">
-        <span class="it">Costruisco plugin Paper e il server su cui girano. Qui sotto ci sono i tre sistemi pubblici e ValaryRPG, l'RPG per cui li ho scritti.</span>
-        <span class="en">I build Paper plugins and the server they run on. Below are the three public systems and ValaryRPG, the RPG they were written for.</span>
+        <span class="it">Costruisco plugin Paper. I tre sistemi qui sotto sono pubblici. Il server e i siti stanno sulle loro pagine.</span>
+        <span class="en">I build Paper plugins. The three systems below are public. The server and the sites have their own pages.</span>
       </p>
       <ol class="index">
         <li>
@@ -109,83 +109,6 @@
         <a class="repo" href="https://github.com/Nyxon-com/modernArena">GitHub / modernArena</a>
       </article>
     </div>
-
-    <section class="server" id="server">
-      <p class="eyebrow"><span class="it">Server</span><span class="en">Server</span></p>
-      <h2>ValaryRPG</h2>
-      <p>
-        <span class="it">ValaryRPG è un RPG a classi. Il personaggio cresce su MMOCore, l'equipaggiamento è MMOItems, le chiavi e i drop passano da modernCrates, e i fight grossi stanno in istanze di modernArena. I boss sono MythicMobs: un'intro inchiodata al punto di spawn, poi una pesca di abilità che si stringe sotto metà vita.</span>
-        <span class="en">ValaryRPG is a class-based RPG. The character grows on MMOCore, gear is MMOItems, keys and drops go through modernCrates, and the large fights run in modernArena instances. Bosses are MythicMobs: an intro pinned to the spawn point, then an ability roll that tightens under half health.</span>
-      </p>
-      <p class="note">
-        <span class="it">Le foto dei boss vanno in questi tre riquadri. I file non ci sono ancora: quando li hai, li metti in media/geocron.jpg, media/sylvaron.jpg e media/traghion.jpg.</span>
-        <span class="en">Boss photos go in these three frames. The files are not here yet: once you have them, put them at media/geocron.jpg, media/sylvaron.jpg, and media/traghion.jpg.</span>
-      </p>
-      <ul class="shots">
-        <li>
-          <figure class="shot">
-            <div class="frame">
-              <p><span class="it">Foto di Geocron</span><span class="en">Geocron photo</span></p>
-            </div>
-            <figcaption>Geocron · 700</figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure class="shot">
-            <div class="frame">
-              <p><span class="it">Foto di Sylvaron</span><span class="en">Sylvaron photo</span></p>
-            </div>
-            <figcaption>Sylvaron · 1300</figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure class="shot">
-            <div class="frame">
-              <p><span class="it">Foto di Traghion</span><span class="en">Traghion photo</span></p>
-            </div>
-            <figcaption>Traghion · 2300</figcaption>
-          </figure>
-        </li>
-      </ul>
-
-      <div class="snippets">
-        <figure class="snippet">
-          <figcaption>
-            <span class="it">Intro. Il boss resta fermo e non prende danni finché lo stance è spawning.</span>
-            <span class="en">Intro. The boss stays put and takes no damage while the stance is spawning.</span>
-          </figcaption>
-          <pre><code>- setvariable{var=caster.boss_pin;type=LOCATION} @self ~onSpawn
-- skill{s=Geocronspawn} @self ~onSpawn
-- skill{s=Boss_Pin} @self ~onTimer:1 ?stance{s=spawning}
-- cancelevent{sync=true} @self ~onDamaged ?stance{s=spawning}
-- skill{s=Geocron_Random} @self ~onTimer:190 &gt;50%
-- skill{s=Geocron_Random} @self ~onTimer:160 &lt;50%
-
-Boss_Pin:
-  Skills:
-  - teleport{unsafe=true} @VariableLocation{var=caster.boss_pin}
-  - velocity{mode=SET;velocityx=0;velocityy=0;velocityz=0} @self</code></pre>
-        </figure>
-        <figure class="snippet">
-          <figcaption>
-            <span class="it">Sotto neutral, Sylvaron pesca una delle quattro abilità. Sopra metà vita il timer è più lento.</span>
-            <span class="en">While neutral, Sylvaron rolls one of four abilities. Above half health the timer is slower.</span>
-          </figcaption>
-          <pre><code>Sylvaron_Random:
-  Conditions:
-  - stance{s=neutral}
-  Skills:
-  - skill{s=Sylvaron_SkillTell} @self
-  - randomskill{s=bigEarthsphere,Sylvaron_Sprouts,Sylvaron_Puddles,Sylvaron_Turrets} @self
-
-Sylvaronspawn:
-  Skills:
-  - setstance{s=spawning} @self
-  - skill{s=Sylvaron_Still} @self
-  - potion{type=DAMAGE_RESISTANCE;duration=40;level=99} @self</code></pre>
-        </figure>
-      </div>
-    </section>
 
     <section class="practice" id="pratica">
       <p class="eyebrow"><span class="it">Oltre i jar</span><span class="en">Beyond the jars</span></p>

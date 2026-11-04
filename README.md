@@ -8,7 +8,9 @@ Work on the page:
 - [modernCrates](https://github.com/Nyxon-com/modernCrates)
 - [modernArena](https://github.com/Nyxon-com/modernArena)
 
-The server section is ValaryRPG. Boss photo frames are empty on purpose. Drop the files at `media/geocron.jpg`, `media/sylvaron.jpg`, and `media/traghion.jpg`.
+ValaryRPG is its own page, `server.html`. Boss photo frames are empty on purpose. Drop the files at `media/geocron.jpg`, `media/sylvaron.jpg`, and `media/traghion.jpg`.
+
+`siti.html` is the sites page. It is empty until there is a site to show.
 
 ## Local
 

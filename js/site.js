@@ -1,13 +1,4 @@
 (function () {
-  var titles = {
-    it: "Nyxon — sistemi per server e commissioni",
-    en: "Nyxon — server systems and commissions"
-  };
-  var descriptions = {
-    it: "Portfolio di Nyxon. Plugin Paper e il server RPG ValaryRPG.",
-    en: "Nyxon's portfolio. Paper plugins and the ValaryRPG server."
-  };
-
   var root = document.documentElement;
   var buttons = document.querySelectorAll(".lang button");
   var description = document.querySelector('meta[name="description"]');
@@ -16,10 +7,12 @@
     var next = lang === "en" ? "en" : "it";
     root.lang = next;
     root.dataset.lang = next;
-    document.title = titles[next];
-    if (description) description.setAttribute("content", descriptions[next]);
+    var title = root.getAttribute(next === "en" ? "data-title-en" : "data-title-it");
+    var about = root.getAttribute(next === "en" ? "data-desc-en" : "data-desc-it");
+    if (title) document.title = title;
+    if (description && about) description.setAttribute("content", about);
     var nav = document.querySelector(".mast nav");
-    if (nav) nav.setAttribute("aria-label", next === "en" ? "Sections" : "Sezioni");
+    if (nav) nav.setAttribute("aria-label", next === "en" ? "Pages" : "Pagine");
     buttons.forEach(function (button) {
       button.setAttribute("aria-pressed", button.getAttribute("data-lang") === next ? "true" : "false");
     });
