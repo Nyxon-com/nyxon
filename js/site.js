@@ -4,8 +4,8 @@
     en: "Nyxon — server systems and commissions"
   };
   var descriptions = {
-    it: "Portfolio di Nyxon. Plugin Paper in produzione su ValaryRPG: modernCore, modernCrates, modernArena.",
-    en: "Nyxon's portfolio. Paper plugins running on ValaryRPG: modernCore, modernCrates, modernArena."
+    it: "Portfolio di Nyxon. Plugin Paper e boss MythicMobs in produzione su ValaryRPG.",
+    en: "Nyxon's portfolio. Paper plugins and MythicMobs bosses running on ValaryRPG."
   };
 
   var root = document.documentElement;

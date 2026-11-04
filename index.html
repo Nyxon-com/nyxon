@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nyxon — sistemi per server e commissioni</title>
-  <meta name="description" content="Portfolio di Nyxon. Plugin Paper in produzione su ValaryRPG: modernCore, modernCrates, modernArena." />
-  <meta name="theme-color" content="#f3ead7" />
+  <meta name="description" content="Portfolio di Nyxon. Plugin Paper e boss MythicMobs in produzione su ValaryRPG." />
+  <meta name="theme-color" content="#0F172A" />
   <link rel="canonical" href="https://nyxon-com.github.io/nyxon/" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f3ead7'/%3E%3Ctext x='5' y='24' font-family='Georgia' font-size='20' font-style='italic' fill='%231c1612'%3EN%3C/text%3E%3Crect y='30' width='32' height='2' fill='%239c2f24'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F172A'/%3E%3Ctext x='6' y='23' font-family='monospace' font-size='18' fill='%23F8FAFC'%3EN%3C/text%3E%3Crect y='30' width='32' height='2' fill='%2322C55E'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,560;1,9..144,560&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,650;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/site.css" />
   <script>
     try {
@@ -29,6 +29,7 @@
     <a class="mark" href="#top">Nyxon</a>
     <nav aria-label="Sezioni">
       <a href="#lavori"><span class="it">Lavori</span><span class="en">Work</span></a>
+      <a href="#boss"><span class="it">Boss</span><span class="en">Bosses</span></a>
       <a href="#pratica"><span class="it">Pratica</span><span class="en">Practice</span></a>
       <a href="#contatto"><span class="it">Contatto</span><span class="en">Contact</span></a>
     </nav>
@@ -43,21 +44,29 @@
       <p class="kicker"><span class="it">Catalogo 04.11.26</span><span class="en">Catalog 04.11.26</span></p>
       <h1><span class="name">Nyxon</span></h1>
       <p class="lede">
-        <span class="it">Costruisco plugin Paper e il backend che li tiene in piedi. I tre sistemi qui sotto girano su ValaryRPG. Sono il campione con cui prendo commissioni: Minecraft, e il resto del lavoro fatto allo stesso modo.</span>
-        <span class="en">I build Paper plugins and the backend that keeps them standing. The three systems below run on ValaryRPG. They are the sample I take commissions from: Minecraft, and the rest of the work done the same way.</span>
+        <span class="it">Costruisco plugin Paper e il contenuto che ci gira sopra. Qui sotto ci sono i sistemi in produzione su ValaryRPG, più i boss MythicMobs. Il video di un fight lo metto io nello spazio già pronto.</span>
+        <span class="en">I build Paper plugins and the content that runs on them. Below are the systems in production on ValaryRPG, plus the MythicMobs bosses. I will drop a fight video into the slot that is already there.</span>
       </p>
       <ol class="index">
         <li>
           <a href="#core">
             <span class="num">01</span>
             <strong>modernCore</strong>
-            <span class="it">Il nucleo del server</span>
-            <span class="en">The server core</span>
+            <span class="it">Spawn, staff, economia di base</span>
+            <span class="en">Spawn, staff, base economy</span>
+          </a>
+        </li>
+        <li>
+          <a href="#valary">
+            <span class="num">02</span>
+            <strong>modernValary</strong>
+            <span class="it">Sistemi nati solo su ValaryRPG</span>
+            <span class="en">Systems that exist only on ValaryRPG</span>
           </a>
         </li>
         <li>
           <a href="#crates">
-            <span class="num">02</span>
+            <span class="num">03</span>
             <strong>modernCrates</strong>
             <span class="it">Chiavi, loot, editor</span>
             <span class="en">Keys, loot, editor</span>
@@ -65,10 +74,18 @@
         </li>
         <li>
           <a href="#arena">
-            <span class="num">03</span>
+            <span class="num">04</span>
             <strong>modernArena</strong>
             <span class="it">Arene e dungeon istanziati</span>
             <span class="en">Instanced arenas and dungeons</span>
+          </a>
+        </li>
+        <li>
+          <a href="#boss">
+            <span class="num">05</span>
+            <strong>Boss</strong>
+            <span class="it">YAML MythicMobs, video in arrivo</span>
+            <span class="en">MythicMobs YAML, video coming</span>
           </a>
         </li>
       </ol>
@@ -81,12 +98,12 @@
           <h2>modernCore</h2>
           <p class="meta">com.modern.core · 1.1.3 · MIT</p>
           <p>
-            <span class="it">Core modulare. Staff, home, warp, chat, kit, sell, hologram, portali, spedizioni, combat tag, team e aste. I comandi restano quelli vanilla: /kick, /ban, /vanish. Nessun prefisso preso da un altro plugin.</span>
-            <span class="en">A modular core. Staff tools, homes, warps, chat, kits, sell, holograms, portals, expeditions, combat tags, teams, and auctions. Commands stay vanilla: /kick, /ban, /vanish. No prefix borrowed from another plugin.</span>
+            <span class="it">Il core generico. Staff, home, warp, chat, kit, sell, hologram, portali, tombe. I comandi restano quelli vanilla: /kick, /ban, /vanish. Spedizioni, VIP, SMP e i fix di MMOItems non stanno più qui.</span>
+            <span class="en">The generic core. Staff tools, homes, warps, chat, kits, sell, holograms, portals, graves. Commands stay vanilla: /kick, /ban, /vanish. Expeditions, VIP, SMP, and the MMOItems fixes no longer live here.</span>
           </p>
           <p class="note">
-            <span class="it">I permessi usano il namespace valary, perché il plugin è nato su quel server. Ogni modulo si spegne da config.yml. Le tombe stanno dentro mechanics.</span>
-            <span class="en">Permissions use the valary namespace, because the plugin was born on that server. Each module can be turned off from config.yml. Graves live inside mechanics.</span>
+            <span class="it">I permessi usano il namespace valary, perché il plugin è nato su quel server. Ogni modulo si spegne da config.yml. Senza modernValary.jar accanto, spedizioni e bonus VIP non partono.</span>
+            <span class="en">Permissions use the valary namespace, because the plugin was born on that server. Each module can be turned off from config.yml. Without modernValary.jar beside it, expeditions and the VIP bonus do not start.</span>
           </p>
           <a class="repo" href="https://github.com/Nyxon-com/modernCore">GitHub / modernCore</a>
         </div>
@@ -101,11 +118,11 @@
           </div>
           <div>
             <dt>Hook</dt>
-            <dd>Vault, CoinsEngine, ExcellentEconomy, MMOItems, MythicLib, Multiverse-Core, PlaceholderAPI, TAB</dd>
+            <dd>Vault, CoinsEngine, ExcellentEconomy, Multiverse-Core, PlaceholderAPI, TAB</dd>
           </div>
           <div>
             <dt><span class="it">Moduli</span><span class="en">Modules</span></dt>
-            <dd>worlds, homes, warps, moderation, players, mechanics, holograms, kits, sell, chat, expeditions, vip, smp, features</dd>
+            <dd>worlds, homes, warps, moderation, players, mechanics, holograms, kits, sell, chat, features</dd>
           </div>
           <div>
             <dt><span class="it">Build</span><span class="en">Build</span></dt>
@@ -114,9 +131,48 @@
         </dl>
       </article>
 
-      <article class="work" id="crates">
+      <article class="work" id="valary">
         <div>
           <p class="eyebrow">02 · Paper 26.2</p>
+          <h2>modernValary</h2>
+          <p class="meta">com.modern.valary · 1.0.0 · MIT</p>
+          <p>
+            <span class="it">Quello che non ha senso in un core vendibile da solo. Spedizioni, bonus XP VIP, SMP spento di default, roll degli eco, piccone adventure, multihit, barra di vita mana e DPS, fix di upgrade, gemme e drop mining.</span>
+            <span class="en">What does not belong in a core you can sell on its own. Expeditions, a VIP XP bonus, SMP off by default, eco rolls, the adventure pickaxe, multihit, the health mana and DPS bar, and the upgrade, gem, and mining-drop fixes.</span>
+          </p>
+          <p class="note">
+            <span class="it">Si appoggia a modernCore e legge gli stessi flag in plugins/modernCore/config.yml. I YAML non si spostano: un server già avviato non perde la configurazione.</span>
+            <span class="en">It sits on modernCore and reads the same flags in plugins/modernCore/config.yml. The YAML stays put: a server that is already running does not lose its configuration.</span>
+          </p>
+          <a class="repo" href="https://github.com/Nyxon-com/modernValary">GitHub / modernValary</a>
+        </div>
+        <dl class="spec">
+          <div>
+            <dt><span class="it">Runtime</span><span class="en">Runtime</span></dt>
+            <dd>Paper 26.2 · Java 25</dd>
+          </div>
+          <div>
+            <dt><span class="it">Richiede</span><span class="en">Requires</span></dt>
+            <dd>modernCore, prima, stessa classpath</dd>
+          </div>
+          <div>
+            <dt>Hook</dt>
+            <dd>MMOItems, MMOCore, MythicLib, PlaceholderAPI</dd>
+          </div>
+          <div>
+            <dt><span class="it">Flag</span><span class="en">Flags</span></dt>
+            <dd>expeditions true · vip true · smp false</dd>
+          </div>
+          <div>
+            <dt><span class="it">Build</span><span class="en">Build</span></dt>
+            <dd>gradlew build · modernValary-1.0.0.jar</dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="work" id="crates">
+        <div>
+          <p class="eyebrow">03 · Paper 26.2</p>
           <h2>modernCrates</h2>
           <p class="meta">net.modern.crates · 1.0.1 · MIT</p>
           <p>
@@ -155,7 +211,7 @@
 
       <article class="work" id="arena">
         <div>
-          <p class="eyebrow">03 · Paper 1.21.11</p>
+          <p class="eyebrow">04 · Paper 1.21.11</p>
           <h2>modernArena</h2>
           <p class="meta">com.modern.arena · 1.0.0 · MIT</p>
           <p>
@@ -191,14 +247,44 @@
           </div>
         </dl>
       </article>
+
+      <article class="work" id="boss">
+        <div>
+          <p class="eyebrow">05 · MythicMobs</p>
+          <h2><span class="it">Boss di ValaryRPG</span><span class="en">ValaryRPG bosses</span></h2>
+          <p class="meta">YAML · MIT sul testo</p>
+          <p>
+            <span class="it">Geocron, Sylvaron, Terratron, Traghion, Larycan e Putran. Ogni boss ha intro inchiodata al punto di spawn, una pesca di abilità sotto e sopra metà vita, e i drop via crate, MMOCore e MMOItems.</span>
+            <span class="en">Geocron, Sylvaron, Terratron, Traghion, Larycan, and Putran. Each boss has an intro pinned to the spawn point, an ability roll below and above half health, and drops through crates, MMOCore, and MMOItems.</span>
+          </p>
+          <p class="note">
+            <span class="it">I modelli 3D non sono nel repository: hanno una licenza loro. Nel pubblico ci sono i mob e le skill. Gli spawner del server restano fuori. Qualche skill, come le linee di Larycan, porta gli offset dell'arena perché fanno parte della meccanica.</span>
+            <span class="en">The 3D models are not in the repository: they have their own license. What is public is the mobs and the skills. Server spawners stay out. A few skills, such as Larycan's lines, include the arena offsets because they are part of the mechanic.</span>
+          </p>
+          <a class="repo" href="https://github.com/Nyxon-com/valary-mythic">GitHub / valary-mythic</a>
+        </div>
+        <figure class="film">
+          <div class="film-slot">
+            <p class="film-kicker">video</p>
+            <p>
+              <span class="it">Qui ci va il filmato di un boss. Il file non c'è ancora: quando lo hai, lo metti in media/boss.mp4 e questo riquadro diventa il player.</span>
+              <span class="en">A boss video goes here. The file is not in yet: once you have it, put it at media/boss.mp4 and this frame becomes the player.</span>
+            </p>
+          </div>
+          <figcaption>
+            <span class="it">Geocron 700 · Sylvaron 1300 · Terratron 500 · Traghion 2300 · Larycan 3000 · Putran 4200</span>
+            <span class="en">Geocron 700 · Sylvaron 1300 · Terratron 500 · Traghion 2300 · Larycan 3000 · Putran 4200</span>
+          </figcaption>
+        </figure>
+      </article>
     </div>
 
     <section class="practice" id="pratica">
-      <p class="eyebrow"><span class="it">Oltre i tre jar</span><span class="en">Beyond the three jars</span></p>
+      <p class="eyebrow"><span class="it">Oltre i jar</span><span class="en">Beyond the jars</span></p>
       <h2><span class="it">Cosa si commissiona</span><span class="en">What to commission</span></h2>
       <p>
-        <span class="it">Lo stesso modo di lavorare vale fuori da questi tre repository: moduli separati, dati dei player su SQL, YAML che si spiega, commenti solo dove la logica è davvero lunga.</span>
-        <span class="en">The same way of working applies outside these three repositories: separate modules, player data in SQL, YAML that explains itself, comments only where the logic is actually long.</span>
+        <span class="it">Lo stesso modo di lavorare vale fuori da questi repository: moduli separati, dati dei player su SQL, YAML che si spiega, commenti solo dove la logica è davvero lunga.</span>
+        <span class="en">The same way of working applies outside these repositories: separate modules, player data in SQL, YAML that explains itself, comments only where the logic is actually long.</span>
       </p>
       <ol class="jobs">
         <li>
@@ -207,11 +293,11 @@
         </li>
         <li>
           <span class="n">02</span>
-          <span><span class="it">Sistemi di gioco: arene, crate, quest, vault, shop a rotazione. In pubblico c'è anche modernStore, shop a pool pesati con prezzi via CoinsEngine.</span><span class="en">Game systems: arenas, crates, quests, vaults, rotating shops. modernStore is public too: weighted pools, prices through CoinsEngine.</span></span>
+          <span><span class="it">Sistemi di gioco: arene, crate, spedizioni, shop a rotazione. In pubblico c'è anche modernStore.</span><span class="en">Game systems: arenas, crates, expeditions, rotating shops. modernStore is public too.</span></span>
         </li>
         <li>
           <span class="n">03</span>
-          <span><span class="it">Integrazione con i plugin che il server ha già: MythicMobs, MMOItems, Nexo, ItemsAdder, Vault, PlaceholderAPI.</span><span class="en">Integration with the plugins a server already runs: MythicMobs, MMOItems, Nexo, ItemsAdder, Vault, PlaceholderAPI.</span></span>
+          <span><span class="it">Boss e skill MythicMobs, più l'aggancio a MMOItems, Nexo, ItemsAdder, Vault, PlaceholderAPI.</span><span class="en">MythicMobs bosses and skills, plus hooks into MMOItems, Nexo, ItemsAdder, Vault, PlaceholderAPI.</span></span>
         </li>
         <li>
           <span class="n">04</span>
@@ -228,15 +314,17 @@
       <p class="eyebrow">Nyxon-com</p>
       <h2><span class="it">Il codice è già leggibile.</span><span class="en">The code is already readable.</span></h2>
       <p>
-        <span class="it">I repository sono pubblici, licenza MIT. La commissione è il pezzo su misura: un modulo nuovo, un'economia, un'arena, l'aggancio ai plugin che hai già. Si parte dal repository più vicino al lavoro.</span>
-        <span class="en">The repositories are public, MIT licensed. A commission is the custom piece: a new module, an economy, an arena, a hook into the plugins you already run. Start from the repository closest to the job.</span>
+        <span class="it">I repository sono pubblici, licenza MIT. La commissione è il pezzo su misura: un modulo nuovo, un boss, un'arena, l'aggancio ai plugin che hai già. Si parte dal repository più vicino al lavoro.</span>
+        <span class="en">The repositories are public, MIT licensed. A commission is the custom piece: a new module, a boss, an arena, a hook into the plugins you already run. Start from the repository closest to the job.</span>
       </p>
       <div class="links">
         <a href="mailto:nyxonantoni@gmail.com">nyxonantoni@gmail.com</a>
         <a href="https://github.com/Nyxon-com">GitHub</a>
         <a href="https://github.com/Nyxon-com/modernCore">modernCore</a>
+        <a href="https://github.com/Nyxon-com/modernValary">modernValary</a>
         <a href="https://github.com/Nyxon-com/modernCrates">modernCrates</a>
         <a href="https://github.com/Nyxon-com/modernArena">modernArena</a>
+        <a href="https://github.com/Nyxon-com/valary-mythic">Boss</a>
         <a href="https://github.com/Nyxon-com/modernstore">modernStore</a>
       </div>
     </section>
