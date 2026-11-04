@@ -57,16 +57,8 @@
           </a>
         </li>
         <li>
-          <a href="#valary">
-            <span class="num">02</span>
-            <strong>modernValary</strong>
-            <span class="it">Sistemi nati solo su ValaryRPG</span>
-            <span class="en">Systems that exist only on ValaryRPG</span>
-          </a>
-        </li>
-        <li>
           <a href="#crates">
-            <span class="num">03</span>
+            <span class="num">02</span>
             <strong>modernCrates</strong>
             <span class="it">Chiavi, loot, editor</span>
             <span class="en">Keys, loot, editor</span>
@@ -74,7 +66,7 @@
         </li>
         <li>
           <a href="#arena">
-            <span class="num">04</span>
+            <span class="num">03</span>
             <strong>modernArena</strong>
             <span class="it">Arene e dungeon istanziati</span>
             <span class="en">Instanced arenas and dungeons</span>
@@ -82,7 +74,7 @@
         </li>
         <li>
           <a href="#boss">
-            <span class="num">05</span>
+            <span class="num">04</span>
             <strong>Boss</strong>
             <span class="it">YAML MythicMobs, video in arrivo</span>
             <span class="en">MythicMobs YAML, video coming</span>
@@ -98,12 +90,12 @@
           <h2>modernCore</h2>
           <p class="meta">com.modern.core · 1.1.3 · MIT</p>
           <p>
-            <span class="it">Il core generico. Staff, home, warp, chat, kit, sell, hologram, portali, tombe. I comandi restano quelli vanilla: /kick, /ban, /vanish. Spedizioni, VIP, SMP e i fix di MMOItems non stanno più qui.</span>
-            <span class="en">The generic core. Staff tools, homes, warps, chat, kits, sell, holograms, portals, graves. Commands stay vanilla: /kick, /ban, /vanish. Expeditions, VIP, SMP, and the MMOItems fixes no longer live here.</span>
+            <span class="it">Il core generico. Staff, home, warp, chat, kit, sell, hologram, portali, tombe. I comandi restano quelli vanilla: /kick, /ban, /vanish.</span>
+            <span class="en">The generic core. Staff tools, homes, warps, chat, kits, sell, holograms, portals, graves. Commands stay vanilla: /kick, /ban, /vanish.</span>
           </p>
           <p class="note">
-            <span class="it">I permessi usano il namespace valary, perché il plugin è nato su quel server. Ogni modulo si spegne da config.yml. Senza modernValary.jar accanto, spedizioni e bonus VIP non partono.</span>
-            <span class="en">Permissions use the valary namespace, because the plugin was born on that server. Each module can be turned off from config.yml. Without modernValary.jar beside it, expeditions and the VIP bonus do not start.</span>
+            <span class="it">I permessi usano il namespace valary, perché il plugin è nato su quel server. Ogni modulo si spegne da config.yml. Le tombe stanno dentro mechanics.</span>
+            <span class="en">Permissions use the valary namespace, because the plugin was born on that server. Each module can be turned off from config.yml. Graves live inside mechanics.</span>
           </p>
           <a class="repo" href="https://github.com/Nyxon-com/modernCore">GitHub / modernCore</a>
         </div>
@@ -131,48 +123,9 @@
         </dl>
       </article>
 
-      <article class="work" id="valary">
-        <div>
-          <p class="eyebrow">02 · Paper 26.2</p>
-          <h2>modernValary</h2>
-          <p class="meta">com.modern.valary · 1.0.0 · MIT</p>
-          <p>
-            <span class="it">Quello che non ha senso in un core vendibile da solo. Spedizioni, bonus XP VIP, SMP spento di default, roll degli eco, piccone adventure, multihit, barra di vita mana e DPS, fix di upgrade, gemme e drop mining.</span>
-            <span class="en">What does not belong in a core you can sell on its own. Expeditions, a VIP XP bonus, SMP off by default, eco rolls, the adventure pickaxe, multihit, the health mana and DPS bar, and the upgrade, gem, and mining-drop fixes.</span>
-          </p>
-          <p class="note">
-            <span class="it">Si appoggia a modernCore e legge gli stessi flag in plugins/modernCore/config.yml. I YAML non si spostano: un server già avviato non perde la configurazione.</span>
-            <span class="en">It sits on modernCore and reads the same flags in plugins/modernCore/config.yml. The YAML stays put: a server that is already running does not lose its configuration.</span>
-          </p>
-          <a class="repo" href="https://github.com/Nyxon-com/modernValary">GitHub / modernValary</a>
-        </div>
-        <dl class="spec">
-          <div>
-            <dt><span class="it">Runtime</span><span class="en">Runtime</span></dt>
-            <dd>Paper 26.2 · Java 25</dd>
-          </div>
-          <div>
-            <dt><span class="it">Richiede</span><span class="en">Requires</span></dt>
-            <dd>modernCore, prima, stessa classpath</dd>
-          </div>
-          <div>
-            <dt>Hook</dt>
-            <dd>MMOItems, MMOCore, MythicLib, PlaceholderAPI</dd>
-          </div>
-          <div>
-            <dt><span class="it">Flag</span><span class="en">Flags</span></dt>
-            <dd>expeditions true · vip true · smp false</dd>
-          </div>
-          <div>
-            <dt><span class="it">Build</span><span class="en">Build</span></dt>
-            <dd>gradlew build · modernValary-1.0.0.jar</dd>
-          </div>
-        </dl>
-      </article>
-
       <article class="work" id="crates">
         <div>
-          <p class="eyebrow">03 · Paper 26.2</p>
+          <p class="eyebrow">02 · Paper 26.2</p>
           <h2>modernCrates</h2>
           <p class="meta">net.modern.crates · 1.0.1 · MIT</p>
           <p>
@@ -211,7 +164,7 @@
 
       <article class="work" id="arena">
         <div>
-          <p class="eyebrow">04 · Paper 1.21.11</p>
+          <p class="eyebrow">03 · Paper 1.21.11</p>
           <h2>modernArena</h2>
           <p class="meta">com.modern.arena · 1.0.0 · MIT</p>
           <p>
@@ -250,7 +203,7 @@
 
       <article class="work" id="boss">
         <div>
-          <p class="eyebrow">05 · MythicMobs</p>
+          <p class="eyebrow">04 · MythicMobs</p>
           <h2><span class="it">Boss di ValaryRPG</span><span class="en">ValaryRPG bosses</span></h2>
           <p class="meta">YAML · MIT sul testo</p>
           <p>
@@ -321,7 +274,6 @@
         <a href="mailto:nyxonantoni@gmail.com">nyxonantoni@gmail.com</a>
         <a href="https://github.com/Nyxon-com">GitHub</a>
         <a href="https://github.com/Nyxon-com/modernCore">modernCore</a>
-        <a href="https://github.com/Nyxon-com/modernValary">modernValary</a>
         <a href="https://github.com/Nyxon-com/modernCrates">modernCrates</a>
         <a href="https://github.com/Nyxon-com/modernArena">modernArena</a>
         <a href="https://github.com/Nyxon-com/valary-mythic">Boss</a>
