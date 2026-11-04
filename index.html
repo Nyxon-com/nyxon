@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nyxon — sistemi per server e commissioni</title>
-  <meta name="description" content="Portfolio di Nyxon. Plugin Paper e boss MythicMobs in produzione su ValaryRPG." />
-  <meta name="theme-color" content="#0F172A" />
+  <meta name="description" content="Portfolio di Nyxon. Plugin Paper e il server RPG ValaryRPG." />
+  <meta name="theme-color" content="#1E3A8A" />
   <link rel="canonical" href="https://nyxon-com.github.io/nyxon/" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F172A'/%3E%3Ctext x='6' y='23' font-family='monospace' font-size='18' fill='%23F8FAFC'%3EN%3C/text%3E%3Crect y='30' width='32' height='2' fill='%2322C55E'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231E3A8A'/%3E%3Ctext x='7' y='23' font-family='monospace' font-size='18' fill='%23F8FAFC'%3EN%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
@@ -29,7 +29,7 @@
     <a class="mark" href="#top">Nyxon</a>
     <nav aria-label="Sezioni">
       <a href="#lavori"><span class="it">Lavori</span><span class="en">Work</span></a>
-      <a href="#boss"><span class="it">Boss</span><span class="en">Bosses</span></a>
+      <a href="#server"><span class="it">Server</span><span class="en">Server</span></a>
       <a href="#pratica"><span class="it">Pratica</span><span class="en">Practice</span></a>
       <a href="#contatto"><span class="it">Contatto</span><span class="en">Contact</span></a>
     </nav>
@@ -44,8 +44,8 @@
       <p class="kicker"><span class="it">Catalogo 04.11.26</span><span class="en">Catalog 04.11.26</span></p>
       <h1><span class="name">Nyxon</span></h1>
       <p class="lede">
-        <span class="it">Costruisco plugin Paper e il contenuto che ci gira sopra. Qui sotto ci sono i sistemi in produzione su ValaryRPG, più i boss MythicMobs. Il video di un fight lo metto io nello spazio già pronto.</span>
-        <span class="en">I build Paper plugins and the content that runs on them. Below are the systems in production on ValaryRPG, plus the MythicMobs bosses. I will drop a fight video into the slot that is already there.</span>
+        <span class="it">Costruisco plugin Paper e il server su cui girano. Qui sotto ci sono i tre sistemi pubblici e ValaryRPG, l'RPG per cui li ho scritti.</span>
+        <span class="en">I build Paper plugins and the server they run on. Below are the three public systems and ValaryRPG, the RPG they were written for.</span>
       </p>
       <ol class="index">
         <li>
@@ -72,172 +72,127 @@
             <span class="en">Instanced arenas and dungeons</span>
           </a>
         </li>
-        <li>
-          <a href="#boss">
-            <span class="num">04</span>
-            <strong>Boss</strong>
-            <span class="it">YAML MythicMobs, video in arrivo</span>
-            <span class="en">MythicMobs YAML, video coming</span>
-          </a>
-        </li>
       </ol>
     </section>
 
     <div id="lavori">
       <article class="work" id="core">
-        <div>
-          <p class="eyebrow">01 · Paper 26.2</p>
-          <h2>modernCore</h2>
-          <p class="meta">com.modern.core · 1.1.3 · MIT</p>
-          <p>
-            <span class="it">Il core generico. Staff, home, warp, chat, kit, sell, hologram, portali, tombe. I comandi restano quelli vanilla: /kick, /ban, /vanish.</span>
-            <span class="en">The generic core. Staff tools, homes, warps, chat, kits, sell, holograms, portals, graves. Commands stay vanilla: /kick, /ban, /vanish.</span>
-          </p>
-          <p class="note">
-            <span class="it">I permessi usano il namespace valary, perché il plugin è nato su quel server. Ogni modulo si spegne da config.yml. Le tombe stanno dentro mechanics.</span>
-            <span class="en">Permissions use the valary namespace, because the plugin was born on that server. Each module can be turned off from config.yml. Graves live inside mechanics.</span>
-          </p>
-          <a class="repo" href="https://github.com/Nyxon-com/modernCore">GitHub / modernCore</a>
-        </div>
-        <dl class="spec">
-          <div>
-            <dt><span class="it">Runtime</span><span class="en">Runtime</span></dt>
-            <dd>Paper 26.2 · Java 25</dd>
-          </div>
-          <div>
-            <dt><span class="it">Dati</span><span class="en">Data</span></dt>
-            <dd>HikariCP · SQLite / MariaDB</dd>
-          </div>
-          <div>
-            <dt>Hook</dt>
-            <dd>Vault, CoinsEngine, ExcellentEconomy, Multiverse-Core, PlaceholderAPI, TAB</dd>
-          </div>
-          <div>
-            <dt><span class="it">Moduli</span><span class="en">Modules</span></dt>
-            <dd>worlds, homes, warps, moderation, players, mechanics, holograms, kits, sell, chat, features</dd>
-          </div>
-          <div>
-            <dt><span class="it">Build</span><span class="en">Build</span></dt>
-            <dd>gradlew build · modernCore-1.1.3.jar</dd>
-          </div>
-        </dl>
+        <p class="eyebrow">01 · Paper 26.2</p>
+        <h2>modernCore</h2>
+        <p class="meta">com.modern.core · 1.1.3 · MIT</p>
+        <p>
+          <span class="it">Il core del server. Staff, home, warp, chat, kit, sell, hologram, portali e tombe. I comandi restano quelli vanilla: /kick, /ban, /vanish. Ogni modulo si spegne da solo. La guida è in inglese, nello stesso repository.</span>
+          <span class="en">The server core. Staff tools, homes, warps, chat, kits, sell, holograms, portals, and graves. Commands stay vanilla: /kick, /ban, /vanish. Each module can be turned off on its own. The guide is in English, in the same repository.</span>
+        </p>
+        <a class="repo" href="https://github.com/Nyxon-com/modernCore">GitHub / modernCore</a>
       </article>
 
       <article class="work" id="crates">
-        <div>
-          <p class="eyebrow">02 · Paper 26.2</p>
-          <h2>modernCrates</h2>
-          <p class="meta">net.modern.crates · 1.0.1 · MIT</p>
-          <p>
-            <span class="it">Chiavi fisiche, saldo virtuale e lootbox. Editor in game, anteprima a slot, cinque animazioni: csgo, roulette, roll, spiral, lootbox. L'item può essere vanilla, MMOItems, ItemsAdder o Nexo.</span>
-            <span class="en">Physical keys, a virtual balance, and lootboxes. An in-game editor, a per-slot preview, and five animations: csgo, roulette, roll, spiral, lootbox. Rewards can be vanilla, MMOItems, ItemsAdder, or Nexo.</span>
-          </p>
-          <p class="note">
-            <span class="it">SQLite parte da solo. MySQL o MariaDB quando le aperture sono tante. Se un reward ha dei comandi, parte solo il comando: l'icona in anteprima non viene data.</span>
-            <span class="en">SQLite works out of the box. MySQL or MariaDB when openings pile up. If a reward has commands, only the commands run: the preview icon is not given.</span>
-          </p>
-          <a class="repo" href="https://github.com/Nyxon-com/modernCrates">GitHub / modernCrates</a>
-        </div>
-        <dl class="spec">
-          <div>
-            <dt><span class="it">Runtime</span><span class="en">Runtime</span></dt>
-            <dd>Paper 26.2 · Java 25</dd>
-          </div>
-          <div>
-            <dt><span class="it">Dati</span><span class="en">Data</span></dt>
-            <dd>SQLite · MySQL / MariaDB</dd>
-          </div>
-          <div>
-            <dt><span class="it">Chiavi</span><span class="en">Keys</span></dt>
-            <dd>PHYSICAL · VIRTUAL · LOOTBOX</dd>
-          </div>
-          <div>
-            <dt>PlaceholderAPI</dt>
-            <dd>%nyxoncrates_opened_% · %nyxoncrates_keys_% · leaderboard</dd>
-          </div>
-          <div>
-            <dt><span class="it">Build</span><span class="en">Build</span></dt>
-            <dd>gradlew build · modernCrates-1.0.1.jar</dd>
-          </div>
-        </dl>
+        <p class="eyebrow">02 · Paper 26.2</p>
+        <h2>modernCrates</h2>
+        <p class="meta">net.modern.crates · 1.0.1 · MIT</p>
+        <p>
+          <span class="it">Chiavi fisiche, saldo virtuale e lootbox. Editor in game e cinque animazioni: csgo, roulette, roll, spiral, lootbox. Il premio può essere vanilla, MMOItems, ItemsAdder o Nexo. Se il reward ha dei comandi, parte solo il comando.</span>
+          <span class="en">Physical keys, a virtual balance, and lootboxes. An in-game editor and five animations: csgo, roulette, roll, spiral, lootbox. A reward can be vanilla, MMOItems, ItemsAdder, or Nexo. If it has commands, only the commands run.</span>
+        </p>
+        <a class="repo" href="https://github.com/Nyxon-com/modernCrates">GitHub / modernCrates</a>
       </article>
 
       <article class="work" id="arena">
-        <div>
-          <p class="eyebrow">03 · Paper 1.21.11</p>
-          <h2>modernArena</h2>
-          <p class="meta">com.modern.arena · 1.0.0 · MIT</p>
-          <p>
-            <span class="it">Un template di mondo, non caricato, viene copiato in un'istanza per il party. Boss MythicMobs, dungeon a stanze, coda quando si arriva al tetto di mondi, kill e milestone su SQL. Gli hologram sono TextDisplay di Paper.</span>
-            <span class="en">An unloaded world template is copied into an instance for the party. MythicMobs bosses, room-by-room dungeons, a queue once the world cap is hit, kills and milestones in SQL. Holograms are Paper TextDisplays.</span>
-          </p>
-          <p class="note">
-            <span class="it">MythicMobs è obbligatorio. Il nome in plugin.yml è ancora ValaryRPG-Arena. Core e Crates sono su Paper 26.2: questo jar no, resta su 1.21.11.</span>
-            <span class="en">MythicMobs is required. The plugin.yml name is still ValaryRPG-Arena. Core and Crates target Paper 26.2: this jar does not. It stays on 1.21.11.</span>
-          </p>
-          <a class="repo" href="https://github.com/Nyxon-com/modernArena">GitHub / modernArena</a>
-        </div>
-        <dl class="spec">
-          <div>
-            <dt><span class="it">Runtime</span><span class="en">Runtime</span></dt>
-            <dd>Paper 1.21.11 · Java 25</dd>
-          </div>
-          <div>
-            <dt><span class="it">Dati</span><span class="en">Data</span></dt>
-            <dd>HikariCP · SQLite / MySQL</dd>
-          </div>
-          <div>
-            <dt><span class="it">Obbligatorio</span><span class="en">Required</span></dt>
-            <dd>MythicMobs</dd>
-          </div>
-          <div>
-            <dt><span class="it">Comandi</span><span class="en">Commands</span></dt>
-            <dd>/arena · /dungeon · /party</dd>
-          </div>
-          <div>
-            <dt><span class="it">Build</span><span class="en">Build</span></dt>
-            <dd>gradlew shadowJar · modernArena-1.0.0.jar</dd>
-          </div>
-        </dl>
-      </article>
-
-      <article class="work" id="boss">
-        <div>
-          <p class="eyebrow">04 · MythicMobs</p>
-          <h2><span class="it">Boss di ValaryRPG</span><span class="en">ValaryRPG bosses</span></h2>
-          <p class="meta">YAML · MIT sul testo</p>
-          <p>
-            <span class="it">Geocron, Sylvaron, Terratron, Traghion, Larycan e Putran. Ogni boss ha intro inchiodata al punto di spawn, una pesca di abilità sotto e sopra metà vita, e i drop via crate, MMOCore e MMOItems.</span>
-            <span class="en">Geocron, Sylvaron, Terratron, Traghion, Larycan, and Putran. Each boss has an intro pinned to the spawn point, an ability roll below and above half health, and drops through crates, MMOCore, and MMOItems.</span>
-          </p>
-          <p class="note">
-            <span class="it">I modelli 3D non sono nel repository: hanno una licenza loro. Nel pubblico ci sono i mob e le skill. Gli spawner del server restano fuori. Qualche skill, come le linee di Larycan, porta gli offset dell'arena perché fanno parte della meccanica.</span>
-            <span class="en">The 3D models are not in the repository: they have their own license. What is public is the mobs and the skills. Server spawners stay out. A few skills, such as Larycan's lines, include the arena offsets because they are part of the mechanic.</span>
-          </p>
-          <a class="repo" href="https://github.com/Nyxon-com/valary-mythic">GitHub / valary-mythic</a>
-        </div>
-        <figure class="film">
-          <div class="film-slot">
-            <p class="film-kicker">video</p>
-            <p>
-              <span class="it">Qui ci va il filmato di un boss. Il file non c'è ancora: quando lo hai, lo metti in media/boss.mp4 e questo riquadro diventa il player.</span>
-              <span class="en">A boss video goes here. The file is not in yet: once you have it, put it at media/boss.mp4 and this frame becomes the player.</span>
-            </p>
-          </div>
-          <figcaption>
-            <span class="it">Geocron 700 · Sylvaron 1300 · Terratron 500 · Traghion 2300 · Larycan 3000 · Putran 4200</span>
-            <span class="en">Geocron 700 · Sylvaron 1300 · Terratron 500 · Traghion 2300 · Larycan 3000 · Putran 4200</span>
-          </figcaption>
-        </figure>
+        <p class="eyebrow">03 · Paper 1.21.11</p>
+        <h2>modernArena</h2>
+        <p class="meta">com.modern.arena · 1.0.0 · MIT</p>
+        <p>
+          <span class="it">Un template di mondo, non caricato, viene copiato in un'istanza per il party. Boss MythicMobs, dungeon a stanze, coda quando si arriva al tetto di mondi. Il nome in plugin.yml è ancora ValaryRPG-Arena. MythicMobs è obbligatorio.</span>
+          <span class="en">An unloaded world template is copied into an instance for the party. MythicMobs bosses, room-by-room dungeons, and a queue once the world cap is hit. The plugin.yml name is still ValaryRPG-Arena. MythicMobs is required.</span>
+        </p>
+        <a class="repo" href="https://github.com/Nyxon-com/modernArena">GitHub / modernArena</a>
       </article>
     </div>
+
+    <section class="server" id="server">
+      <p class="eyebrow"><span class="it">Server</span><span class="en">Server</span></p>
+      <h2>ValaryRPG</h2>
+      <p>
+        <span class="it">ValaryRPG è un RPG a classi. Il personaggio cresce su MMOCore, l'equipaggiamento è MMOItems, le chiavi e i drop passano da modernCrates, e i fight grossi stanno in istanze di modernArena. I boss sono MythicMobs: un'intro inchiodata al punto di spawn, poi una pesca di abilità che si stringe sotto metà vita.</span>
+        <span class="en">ValaryRPG is a class-based RPG. The character grows on MMOCore, gear is MMOItems, keys and drops go through modernCrates, and the large fights run in modernArena instances. Bosses are MythicMobs: an intro pinned to the spawn point, then an ability roll that tightens under half health.</span>
+      </p>
+      <p class="note">
+        <span class="it">Le foto dei boss vanno in questi tre riquadri. I file non ci sono ancora: quando li hai, li metti in media/geocron.jpg, media/sylvaron.jpg e media/traghion.jpg.</span>
+        <span class="en">Boss photos go in these three frames. The files are not here yet: once you have them, put them at media/geocron.jpg, media/sylvaron.jpg, and media/traghion.jpg.</span>
+      </p>
+      <ul class="shots">
+        <li>
+          <figure class="shot">
+            <div class="frame">
+              <p><span class="it">Foto di Geocron</span><span class="en">Geocron photo</span></p>
+            </div>
+            <figcaption>Geocron · 700</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="shot">
+            <div class="frame">
+              <p><span class="it">Foto di Sylvaron</span><span class="en">Sylvaron photo</span></p>
+            </div>
+            <figcaption>Sylvaron · 1300</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="shot">
+            <div class="frame">
+              <p><span class="it">Foto di Traghion</span><span class="en">Traghion photo</span></p>
+            </div>
+            <figcaption>Traghion · 2300</figcaption>
+          </figure>
+        </li>
+      </ul>
+
+      <div class="snippets">
+        <figure class="snippet">
+          <figcaption>
+            <span class="it">Intro. Il boss resta fermo e non prende danni finché lo stance è spawning.</span>
+            <span class="en">Intro. The boss stays put and takes no damage while the stance is spawning.</span>
+          </figcaption>
+          <pre><code>- setvariable{var=caster.boss_pin;type=LOCATION} @self ~onSpawn
+- skill{s=Geocronspawn} @self ~onSpawn
+- skill{s=Boss_Pin} @self ~onTimer:1 ?stance{s=spawning}
+- cancelevent{sync=true} @self ~onDamaged ?stance{s=spawning}
+- skill{s=Geocron_Random} @self ~onTimer:190 &gt;50%
+- skill{s=Geocron_Random} @self ~onTimer:160 &lt;50%
+
+Boss_Pin:
+  Skills:
+  - teleport{unsafe=true} @VariableLocation{var=caster.boss_pin}
+  - velocity{mode=SET;velocityx=0;velocityy=0;velocityz=0} @self</code></pre>
+        </figure>
+        <figure class="snippet">
+          <figcaption>
+            <span class="it">Sotto neutral, Sylvaron pesca una delle quattro abilità. Sopra metà vita il timer è più lento.</span>
+            <span class="en">While neutral, Sylvaron rolls one of four abilities. Above half health the timer is slower.</span>
+          </figcaption>
+          <pre><code>Sylvaron_Random:
+  Conditions:
+  - stance{s=neutral}
+  Skills:
+  - skill{s=Sylvaron_SkillTell} @self
+  - randomskill{s=bigEarthsphere,Sylvaron_Sprouts,Sylvaron_Puddles,Sylvaron_Turrets} @self
+
+Sylvaronspawn:
+  Skills:
+  - setstance{s=spawning} @self
+  - skill{s=Sylvaron_Still} @self
+  - potion{type=DAMAGE_RESISTANCE;duration=40;level=99} @self</code></pre>
+        </figure>
+      </div>
+    </section>
 
     <section class="practice" id="pratica">
       <p class="eyebrow"><span class="it">Oltre i jar</span><span class="en">Beyond the jars</span></p>
       <h2><span class="it">Cosa si commissiona</span><span class="en">What to commission</span></h2>
       <p>
-        <span class="it">Lo stesso modo di lavorare vale fuori da questi repository: moduli separati, dati dei player su SQL, YAML che si spiega, commenti solo dove la logica è davvero lunga.</span>
-        <span class="en">The same way of working applies outside these repositories: separate modules, player data in SQL, YAML that explains itself, comments only where the logic is actually long.</span>
+        <span class="it">Moduli separati, dati dei player su SQL, YAML che si spiega da solo. La guida sta nello stesso repository del codice ed è in inglese.</span>
+        <span class="en">Separate modules, player data in SQL, YAML that explains itself. The guide sits in the same repository as the code, and it is in English.</span>
       </p>
       <ol class="jobs">
         <li>
@@ -246,19 +201,15 @@
         </li>
         <li>
           <span class="n">02</span>
-          <span><span class="it">Sistemi di gioco: arene, crate, spedizioni, shop a rotazione. In pubblico c'è anche modernStore.</span><span class="en">Game systems: arenas, crates, expeditions, rotating shops. modernStore is public too.</span></span>
+          <span><span class="it">Sistemi di gioco: arene, crate, shop a rotazione. In pubblico c'è anche modernStore.</span><span class="en">Game systems: arenas, crates, rotating shops. modernStore is public too.</span></span>
         </li>
         <li>
           <span class="n">03</span>
-          <span><span class="it">Boss e skill MythicMobs, più l'aggancio a MMOItems, Nexo, ItemsAdder, Vault, PlaceholderAPI.</span><span class="en">MythicMobs bosses and skills, plus hooks into MMOItems, Nexo, ItemsAdder, Vault, PlaceholderAPI.</span></span>
+          <span><span class="it">Boss MythicMobs e l'aggancio a MMOItems, Nexo, ItemsAdder, Vault, PlaceholderAPI.</span><span class="en">MythicMobs bosses and hooks into MMOItems, Nexo, ItemsAdder, Vault, PlaceholderAPI.</span></span>
         </li>
         <li>
           <span class="n">04</span>
-          <span><span class="it">Bot Discord per la community del server: ticket, verifica, moderazione, giveaway.</span><span class="en">A Discord bot for the server community: tickets, verification, moderation, giveaways.</span></span>
-        </li>
-        <li>
-          <span class="n">05</span>
-          <span><span class="it">Documentazione nello stesso repository del codice. La guida si aggiorna quando cambia il build, non dopo.</span><span class="en">Documentation in the same repository as the code. The guide moves when the build moves, not later.</span></span>
+          <span><span class="it">Bot Discord per la community: ticket, verifica, moderazione, giveaway.</span><span class="en">A Discord bot for the community: tickets, verification, moderation, giveaways.</span></span>
         </li>
       </ol>
     </section>
@@ -267,8 +218,8 @@
       <p class="eyebrow">Nyxon-com</p>
       <h2><span class="it">Il codice è già leggibile.</span><span class="en">The code is already readable.</span></h2>
       <p>
-        <span class="it">I repository sono pubblici, licenza MIT. La commissione è il pezzo su misura: un modulo nuovo, un boss, un'arena, l'aggancio ai plugin che hai già. Si parte dal repository più vicino al lavoro.</span>
-        <span class="en">The repositories are public, MIT licensed. A commission is the custom piece: a new module, a boss, an arena, a hook into the plugins you already run. Start from the repository closest to the job.</span>
+        <span class="it">I repository sono pubblici, licenza MIT, documentazione in inglese. La commissione parte dal repository più vicino al lavoro.</span>
+        <span class="en">The repositories are public, MIT licensed, with documentation in English. A commission starts from the repository closest to the job.</span>
       </p>
       <div class="links">
         <a href="mailto:nyxonantoni@gmail.com">nyxonantoni@gmail.com</a>
@@ -276,7 +227,6 @@
         <a href="https://github.com/Nyxon-com/modernCore">modernCore</a>
         <a href="https://github.com/Nyxon-com/modernCrates">modernCrates</a>
         <a href="https://github.com/Nyxon-com/modernArena">modernArena</a>
-        <a href="https://github.com/Nyxon-com/valary-mythic">Boss</a>
         <a href="https://github.com/Nyxon-com/modernstore">modernStore</a>
       </div>
     </section>

@@ -4,8 +4,8 @@
     en: "Nyxon — server systems and commissions"
   };
   var descriptions = {
-    it: "Portfolio di Nyxon. Plugin Paper e boss MythicMobs in produzione su ValaryRPG.",
-    en: "Nyxon's portfolio. Paper plugins and MythicMobs bosses running on ValaryRPG."
+    it: "Portfolio di Nyxon. Plugin Paper e il server RPG ValaryRPG.",
+    en: "Nyxon's portfolio. Paper plugins and the ValaryRPG server."
   };
 
   var root = document.documentElement;

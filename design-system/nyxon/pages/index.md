@@ -1,7 +1,11 @@
 # Index override
 
-Il design system consiglia una landing FAQ con barra di ricerca. Questo sito è un catalogo di lavori, non un centro assistenza: niente barra di ricerca finta, niente accordion FAQ.
+The latest design-system search returned Liquid Glass, which fits, plus a restaurant palette (gold, Playfair Display) and a testimonial carousel, which do not. This page does not use those.
 
-Si tengono stile OLED, colori, JetBrains Mono per i titoli, IBM Plex Sans per il testo, motion 350ms con spostamento di 12px, e il rispetto di `prefers-reduced-motion`.
+Applied from verified results:
 
-Lo stack è HTML e CSS, senza Tailwind e senza GSAP.
+- Style: Liquid Glass, on the navigation and on the frosted panels. Content text sits on a more opaque layer.
+- Color: primary #1E3A8A, secondary #3B82F6, background #F8FAFC, foreground #1E3A8A. The gold accent is not used.
+- Type: JetBrains Mono and IBM Plex Sans, from the developer-documentation pairing.
+- No search bar, no fake testimonials, no config tables.
+- `prefers-reduced-transparency` drops the blur. `prefers-reduced-motion` drops the entrance animation.

@@ -1,26 +1,23 @@
 # Nyxon
 
-Portfolio statico. Italiano di default, inglese dal selettore in testata.
+Static portfolio. Italian by default, English from the header switch.
 
-Lavori in pagina:
+Work on the page:
 
 - [modernCore](https://github.com/Nyxon-com/modernCore)
 - [modernCrates](https://github.com/Nyxon-com/modernCrates)
 - [modernArena](https://github.com/Nyxon-com/modernArena)
-- [Boss MythicMobs](https://github.com/Nyxon-com/valary-mythic)
 
-Lo spazio video è vuoto di proposito. Quando c'è il filmato, va in `media/boss.mp4` e il riquadro in `#boss` va sostituito con un `<video controls>`.
+The server section is ValaryRPG. Boss photo frames are empty on purpose. Drop the files at `media/geocron.jpg`, `media/sylvaron.jpg`, and `media/traghion.jpg`.
 
-## Locale
-
-Apri `index.html`, oppure da questa cartella:
+## Local
 
 ```bash
 py -3 -m http.server 4173
 ```
 
-Poi `http://127.0.0.1:4173`.
+Then `http://127.0.0.1:4173`.
 
-## Pagine
+## Pages
 
 GitHub Pages: https://nyxon-com.github.io/nyxon/
