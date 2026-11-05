@@ -19,10 +19,6 @@ export function Backdrop() {
 
   return (
     <>
-      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
-        <div className="blob -left-24 -top-24 h-[36rem] w-[36rem] bg-primary/35" />
-        <div className="blob right-[-8rem] top-[28rem] h-[28rem] w-[28rem] bg-primary-glow/25" />
-      </div>
       <div
         ref={dot}
         aria-hidden="true"
