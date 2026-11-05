@@ -1,25 +1,12 @@
 # Nyxon
 
-Static portfolio. Italian by default, English from the header switch.
+Landing in React, Vite e Tailwind. I testi e i progetti stanno in `src/data/`.
 
-Work on the page:
-
-- [modernCore](https://github.com/Nyxon-com/modernCore)
-- [modernCrates](https://github.com/Nyxon-com/modernCrates)
-- [modernArena](https://github.com/Nyxon-com/modernArena)
-
-ValaryRPG is its own page, `server.html`. Boss photo frames are empty on purpose. Drop the files at `media/geocron.jpg`, `media/sylvaron.jpg`, and `media/traghion.jpg`.
-
-`siti.html` is the sites page. It is empty until there is a site to show.
-
-## Local
+Pubblicata su https://nyxon-com.github.io/nyxon/
 
 ```bash
-py -3 -m http.server 4173
+npm install
+npm run dev
 ```
 
-Then `http://127.0.0.1:4173`.
-
-## Pages
-
-GitHub Pages: https://nyxon-com.github.io/nyxon/
+La build di produzione è `npm run build`.

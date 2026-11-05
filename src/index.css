@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    margin: 0;
+    background: #05060a;
+    color: #f5f7fa;
+    font-family: Outfit, "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: rgba(30, 107, 255, 0.35);
+  }
+
+  @media (pointer: fine) {
+    html {
+      overscroll-behavior: none;
+    }
+  }
+
+  button,
+  a,
+  summary {
+    touch-action: manipulation;
+  }
+
+  summary {
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  button,
+  a {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid #4d9bff;
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: #1e6bff;
+    color: #ffffff;
+  }
+
+  section {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
+@layer components {
+  .glass {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)),
+      rgba(5, 6, 10, 0.8);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  }
+
+  .cut {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 18px) 0,
+      100% 18px,
+      100% 100%,
+      18px 100%,
+      0 calc(100% - 18px)
+    );
+  }
+
+  .grad {
+    color: #f5f7fa;
+  }
+
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .grad {
+      background: linear-gradient(100deg, #f5f7fa 0%, #4d9bff 58%, #1e6bff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  .nav-link {
+    background-image: linear-gradient(#4d9bff, #4d9bff);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0 2px;
+    transition: background-size 200ms ease;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible {
+    background-size: 100% 2px;
+  }
+}
+
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  animation: drift 22s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(6%, 8%, 0);
+  }
+}
+
+.font-display {
+  line-height: 1.45;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .blob,
+  .nav-link {
+    animation: none;
+    transition: none;
+  }
+}

@@ -1,164 +1,31 @@
 <!DOCTYPE html>
-<html lang="it" data-lang="it" data-title-it="Nyxon — sistemi per server e commissioni" data-title-en="Nyxon — server systems and commissions" data-desc-it="Portfolio di Nyxon. Plugin Paper." data-desc-en="Nyxon's portfolio. Paper plugins.">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nyxon — sistemi per server e commissioni</title>
-  <meta name="description" content="Portfolio di Nyxon. Plugin Paper e il server RPG ValaryRPG." />
-  <meta name="theme-color" content="#000000" />
-  <link rel="canonical" href="https://nyxon-com.github.io/nyxon/" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231E3A8A'/%3E%3Ctext x='7' y='23' font-family='monospace' font-size='18' fill='%23F8FAFC'%3EN%3C/text%3E%3C/svg%3E" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/site.css" />
-  <script>
-    try {
-      if (localStorage.getItem("nyxon-lang") === "en") {
-        document.documentElement.lang = "en";
-        document.documentElement.dataset.lang = "en";
-      }
-    } catch (error) {}
-  </script>
-</head>
-<body>
-  <a class="skip it" href="#lavori">Salta ai lavori</a>
-  <a class="skip en" href="#lavori">Skip to the work</a>
-
-  <header class="mast">
-    <a class="mark" href="index.html">Nyxon</a>
-    <nav aria-label="Sezioni">
-      <a href="index.html#lavori" aria-current="page"><span class="it">Lavori</span><span class="en">Work</span></a>
-      <a href="server.html"><span class="it">Server</span><span class="en">Server</span></a>
-      <a href="siti.html"><span class="it">Siti</span><span class="en">Sites</span></a>
-      <a href="index.html#contatto"><span class="it">Contatto</span><span class="en">Contact</span></a>
-    </nav>
-    <div class="lang" role="group" aria-label="Lingua">
-      <button type="button" data-lang="it" aria-pressed="true">IT</button>
-      <button type="button" data-lang="en" aria-pressed="false">EN</button>
-    </div>
-  </header>
-
-  <main class="wrap" id="top">
-    <section class="hero">
-      <p class="kicker"><span class="it">Catalogo 04.11.26</span><span class="en">Catalog 04.11.26</span></p>
-      <h1><span class="name">Nyxon</span></h1>
-      <p class="lede">
-        <span class="it">Costruisco plugin Paper. I tre sistemi qui sotto sono pubblici. Il server e i siti stanno sulle loro pagine.</span>
-        <span class="en">I build Paper plugins. The three systems below are public. The server and the sites have their own pages.</span>
-      </p>
-      <ol class="index">
-        <li>
-          <a href="#core">
-            <span class="num">01</span>
-            <strong>modernCore</strong>
-            <span class="it">Spawn, staff, economia di base</span>
-            <span class="en">Spawn, staff, base economy</span>
-          </a>
-        </li>
-        <li>
-          <a href="#crates">
-            <span class="num">02</span>
-            <strong>modernCrates</strong>
-            <span class="it">Chiavi, loot, editor</span>
-            <span class="en">Keys, loot, editor</span>
-          </a>
-        </li>
-        <li>
-          <a href="#arena">
-            <span class="num">03</span>
-            <strong>modernArena</strong>
-            <span class="it">Arene e dungeon istanziati</span>
-            <span class="en">Instanced arenas and dungeons</span>
-          </a>
-        </li>
-      </ol>
-    </section>
-
-    <div id="lavori">
-      <article class="work" id="core">
-        <p class="eyebrow">01 · Paper 26.2</p>
-        <h2>modernCore</h2>
-        <p class="meta">com.modern.core · 1.1.3 · MIT</p>
-        <p>
-          <span class="it">Il core del server. Staff, home, warp, chat, kit, sell, hologram, portali e tombe. I comandi restano quelli vanilla: /kick, /ban, /vanish. Ogni modulo si spegne da solo. La guida è in inglese, nello stesso repository.</span>
-          <span class="en">The server core. Staff tools, homes, warps, chat, kits, sell, holograms, portals, and graves. Commands stay vanilla: /kick, /ban, /vanish. Each module can be turned off on its own. The guide is in English, in the same repository.</span>
-        </p>
-        <a class="repo" href="https://github.com/Nyxon-com/modernCore">GitHub / modernCore</a>
-      </article>
-
-      <article class="work" id="crates">
-        <p class="eyebrow">02 · Paper 26.2</p>
-        <h2>modernCrates</h2>
-        <p class="meta">net.modern.crates · 1.0.1 · MIT</p>
-        <p>
-          <span class="it">Chiavi fisiche, saldo virtuale e lootbox. Editor in game e cinque animazioni: csgo, roulette, roll, spiral, lootbox. Il premio può essere vanilla, MMOItems, ItemsAdder o Nexo. Se il reward ha dei comandi, parte solo il comando.</span>
-          <span class="en">Physical keys, a virtual balance, and lootboxes. An in-game editor and five animations: csgo, roulette, roll, spiral, lootbox. A reward can be vanilla, MMOItems, ItemsAdder, or Nexo. If it has commands, only the commands run.</span>
-        </p>
-        <a class="repo" href="https://github.com/Nyxon-com/modernCrates">GitHub / modernCrates</a>
-      </article>
-
-      <article class="work" id="arena">
-        <p class="eyebrow">03 · Paper 1.21.11</p>
-        <h2>modernArena</h2>
-        <p class="meta">com.modern.arena · 1.0.0 · MIT</p>
-        <p>
-          <span class="it">Un template di mondo, non caricato, viene copiato in un'istanza per il party. Boss MythicMobs, dungeon a stanze, coda quando si arriva al tetto di mondi. Il nome in plugin.yml è ancora ValaryRPG-Arena. MythicMobs è obbligatorio.</span>
-          <span class="en">An unloaded world template is copied into an instance for the party. MythicMobs bosses, room-by-room dungeons, and a queue once the world cap is hit. The plugin.yml name is still ValaryRPG-Arena. MythicMobs is required.</span>
-        </p>
-        <a class="repo" href="https://github.com/Nyxon-com/modernArena">GitHub / modernArena</a>
-      </article>
-    </div>
-
-    <section class="practice" id="pratica">
-      <p class="eyebrow"><span class="it">Oltre i jar</span><span class="en">Beyond the jars</span></p>
-      <h2><span class="it">Cosa si commissiona</span><span class="en">What to commission</span></h2>
-      <p>
-        <span class="it">Moduli separati, dati dei player su SQL, YAML che si spiega da solo. La guida sta nello stesso repository del codice ed è in inglese.</span>
-        <span class="en">Separate modules, player data in SQL, YAML that explains itself. The guide sits in the same repository as the code, and it is in English.</span>
-      </p>
-      <ol class="jobs">
-        <li>
-          <span class="n">01</span>
-          <span><span class="it">Plugin Paper su misura. Java 25, Gradle, comandi e permessi con un nome solo.</span><span class="en">Custom Paper plugins. Java 25, Gradle, commands and permissions with one clear name.</span></span>
-        </li>
-        <li>
-          <span class="n">02</span>
-          <span><span class="it">Sistemi di gioco: arene, crate, shop a rotazione. In pubblico c'è anche modernStore.</span><span class="en">Game systems: arenas, crates, rotating shops. modernStore is public too.</span></span>
-        </li>
-        <li>
-          <span class="n">03</span>
-          <span><span class="it">Boss MythicMobs e l'aggancio a MMOItems, Nexo, ItemsAdder, Vault, PlaceholderAPI.</span><span class="en">MythicMobs bosses and hooks into MMOItems, Nexo, ItemsAdder, Vault, PlaceholderAPI.</span></span>
-        </li>
-        <li>
-          <span class="n">04</span>
-          <span><span class="it">Bot Discord per la community: ticket, verifica, moderazione, giveaway.</span><span class="en">A Discord bot for the community: tickets, verification, moderation, giveaways.</span></span>
-        </li>
-      </ol>
-    </section>
-
-    <section class="close" id="contatto">
-      <p class="eyebrow">Nyxon-com</p>
-      <h2><span class="it">Il codice è già leggibile.</span><span class="en">The code is already readable.</span></h2>
-      <p>
-        <span class="it">I repository sono pubblici, licenza MIT, documentazione in inglese. La commissione parte dal repository più vicino al lavoro.</span>
-        <span class="en">The repositories are public, MIT licensed, with documentation in English. A commission starts from the repository closest to the job.</span>
-      </p>
-      <div class="links">
-        <a href="mailto:nyxonantoni@gmail.com">nyxonantoni@gmail.com</a>
-        <a href="https://github.com/Nyxon-com">GitHub</a>
-        <a href="https://github.com/Nyxon-com/modernCore">modernCore</a>
-        <a href="https://github.com/Nyxon-com/modernCrates">modernCrates</a>
-        <a href="https://github.com/Nyxon-com/modernArena">modernArena</a>
-        <a href="https://github.com/Nyxon-com/modernstore">modernStore</a>
-      </div>
-    </section>
-
-    <p class="colophon">
-      <span>Nyxon · Paper · Java · SQL</span>
-      <span>04.11.26</span>
-    </p>
-  </main>
-  <script src="js/site.js"></script>
-</body>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nyxon — plugin, server e siti per Minecraft</title>
+    <meta
+      name="description"
+      content="Nyxon costruisce plugin Paper, server Minecraft e siti su misura. Scrivi e ricevi un preventivo."
+    />
+    <meta name="theme-color" content="#05060A" />
+    <meta property="og:title" content="Nyxon — plugin, server e siti per Minecraft" />
+    <meta
+      property="og:description"
+      content="Plugin Paper, setup server e siti. Un preventivo, senza un listino finto."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2305060A'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%231E6BFF'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Syne:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
