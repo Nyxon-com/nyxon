@@ -22,13 +22,6 @@ export function Backdrop() {
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
         <div className="blob -left-24 -top-24 h-[36rem] w-[36rem] bg-primary/35" />
         <div className="blob right-[-8rem] top-[28rem] h-[28rem] w-[28rem] bg-primary-glow/25" />
-        <div
-          className="absolute inset-0 opacity-[0.13]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.55'/></svg>\")",
-          }}
-        />
       </div>
       <div
         ref={dot}
