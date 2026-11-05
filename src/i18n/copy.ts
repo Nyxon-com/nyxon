@@ -31,6 +31,8 @@ export type Copy = {
   response: string;
   skillsLabel: string;
   nav: { servizi: string; plugin: string; design: string; server: string; processo: string; prezzi: string; faq: string };
+  zoom: string;
+  close: string;
   designPageTitle: string;
   designTitle: string;
   designLede: string;
@@ -106,6 +108,8 @@ const it: Copy = {
   response: "Rispondo in italiano entro un giorno.",
   skillsLabel: "Competenze",
   nav: { servizi: "Servizi", plugin: "Plugin", design: "Design", server: "Server", processo: "Processo", prezzi: "Prezzi", faq: "Domande" },
+  zoom: "Ingrandisci",
+  close: "Chiudi",
   designPageTitle: "Nyxon — Design",
   designTitle: "Design",
   designLede: "Logo di RiftMC e le skin Nyxon.",
@@ -222,6 +226,8 @@ const en: Copy = {
   response: "I reply in Italian or English within a day.",
   skillsLabel: "Skills",
   nav: { servizi: "Services", plugin: "Plugins", design: "Design", server: "Server", processo: "Process", prezzi: "Prices", faq: "Questions" },
+  zoom: "Zoom in",
+  close: "Close",
   designPageTitle: "Nyxon — Design",
   designTitle: "Design",
   designLede: "The RiftMC logo and the Nyxon skins.",
@@ -338,6 +344,8 @@ const es: Copy = {
   response: "Respondo en italiano o en español en un día.",
   skillsLabel: "Competencias",
   nav: { servizi: "Servicios", plugin: "Plugins", design: "Diseño", server: "Server", processo: "Proceso", prezzi: "Precios", faq: "Preguntas" },
+  zoom: "Ampliar",
+  close: "Cerrar",
   designPageTitle: "Nyxon — Diseño",
   designTitle: "Diseño",
   designLede: "El logo de RiftMC y las skins de Nyxon.",
@@ -454,6 +462,8 @@ const de: Copy = {
   response: "Ich antworte auf Italienisch oder Deutsch innerhalb eines Tages.",
   skillsLabel: "Kenntnisse",
   nav: { servizi: "Leistungen", plugin: "Plugins", design: "Design", server: "Server", processo: "Ablauf", prezzi: "Preise", faq: "Fragen" },
+  zoom: "Vergrößern",
+  close: "Schließen",
   designPageTitle: "Nyxon — Design",
   designTitle: "Design",
   designLede: "Das RiftMC-Logo und die Nyxon-Skins.",
@@ -570,6 +580,8 @@ const fr: Copy = {
   response: "Je réponds en italien ou en français sous un jour.",
   skillsLabel: "Compétences",
   nav: { servizi: "Services", plugin: "Plugins", design: "Design", server: "Serveur", processo: "Déroulement", prezzi: "Prix", faq: "Questions" },
+  zoom: "Agrandir",
+  close: "Fermer",
   designPageTitle: "Nyxon — Design",
   designTitle: "Design",
   designLede: "Le logo RiftMC et les skins Nyxon.",
