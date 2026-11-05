@@ -1,11 +1,13 @@
 import { Section } from "../components/Section";
-import { faq } from "../data/faq";
+import { useI18n } from "../i18n/language";
 
 export function Faq() {
+  const { t } = useI18n();
+
   return (
-    <Section id="faq" title="Domande">
+    <Section id="faq" title={t.faqTitle}>
       <div className="divide-y divide-white/10 border-y border-white/10">
-        {faq.map((item) => (
+        {t.faq.map((item) => (
           <details key={item.q} className="group py-1">
             <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between py-3 font-semibold">
               {item.q}

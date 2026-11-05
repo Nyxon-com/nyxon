@@ -3,15 +3,9 @@ import { Github, Mail } from "lucide-react";
 import { GlassCard } from "../components/GlassCard";
 import { Section } from "../components/Section";
 import { site } from "../data/site";
+import { useI18n } from "../i18n/language";
 
 type Errors = Partial<Record<"name" | "contact" | "type" | "message", string>>;
-
-const fields = [
-  ["name", "Scrivi come ti chiami."],
-  ["contact", "Scrivi un’email o un contatto Discord."],
-  ["type", "Scegli il tipo di lavoro."],
-  ["message", "Scrivi cosa ti serve, anche in due righe."],
-] as const;
 
 function quoteType() {
   const value = new URLSearchParams(window.location.search).get("tipo");
@@ -20,6 +14,13 @@ function quoteType() {
 }
 
 export function Contact() {
+  const { t } = useI18n();
+  const fields = [
+    ["name", t.errors.name],
+    ["contact", t.errors.contact],
+    ["type", t.errors.type],
+    ["message", t.errors.message],
+  ] as const;
   const [errors, setErrors] = useState<Errors>({});
   const [ready, setReady] = useState(false);
   const [type, setType] = useState(quoteType);
@@ -60,16 +61,17 @@ export function Contact() {
       focusSummary.current = true;
       return;
     }
-    const body = `Nome: ${name}\nContatto: ${contact}\nTipo: ${chosen}\n\n${message}`;
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(`Preventivo ${chosen}`)}&body=${encodeURIComponent(body)}`;
+    const kind = chosen === "sito" || chosen === "plugin" || chosen === "server" ? t.types[chosen] : chosen;
+    const body = `${t.mail.name}: ${name}\n${t.mail.contact}: ${contact}\n${t.mail.type}: ${kind}\n\n${message}`;
+    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(`${t.mail.subject} ${kind}`)}&body=${encodeURIComponent(body)}`;
     setReady(true);
   }
 
   return (
     <Section
       id="contatto"
-      title="Preventivo"
-      lede={site.response}
+      title={t.contactTitle}
+      lede={t.response}
     >
       <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
         <GlassCard className="p-6">
@@ -77,7 +79,7 @@ export function Contact() {
             {Object.keys(errors).length > 0 ? (
               <div ref={summary} tabIndex={-1} role="alert" aria-labelledby="error-title" className="border border-[#ffb4b4]/60 p-4">
                 <h3 id="error-title" className="font-semibold">
-                  Manca qualcosa
+                  {t.missing}
                 </h3>
                 <ul className="mt-2 space-y-1">
                   {fields.map(([id, text]) =>
@@ -94,7 +96,7 @@ export function Contact() {
             ) : null}
 
             <label className="grid gap-1" htmlFor="name">
-              Nome
+              {t.name}
               <input
                 id="name"
                 name="name"
@@ -111,13 +113,13 @@ export function Contact() {
             </label>
 
             <label className="grid gap-1" htmlFor="contact">
-              Email o Discord
+              {t.contact}
               <input
                 id="contact"
                 name="contact"
                 autoComplete="email"
                 spellCheck={false}
-                placeholder="nome@email.com…"
+                placeholder={t.contactPlaceholder}
                 aria-invalid={Boolean(errors.contact)}
                 aria-describedby={errors.contact ? "contact-error" : undefined}
                 className="min-h-11 border border-white/20 bg-[#10141c] px-3 text-ink placeholder:text-muted"
@@ -130,7 +132,7 @@ export function Contact() {
             </label>
 
             <label className="grid gap-1" htmlFor="type">
-              Tipo di progetto
+              {t.projectType}
               <select
                 id="type"
                 name="type"
@@ -141,11 +143,11 @@ export function Contact() {
                 className="min-h-11 border border-white/20 bg-[#10141c] px-3 text-ink"
               >
                 <option value="" disabled>
-                  Scegli…
+                  {t.choose}
                 </option>
-                <option value="sito">Sito</option>
-                <option value="plugin">Plugin</option>
-                <option value="server">Server</option>
+                <option value="sito">{t.types.sito}</option>
+                <option value="plugin">{t.types.plugin}</option>
+                <option value="server">{t.types.server}</option>
               </select>
               {errors.type ? (
                 <span id="type-error" className="text-sm text-[#ffb4b4]">
@@ -155,12 +157,12 @@ export function Contact() {
             </label>
 
             <label className="grid gap-1" htmlFor="message">
-              Messaggio
+              {t.message}
               <textarea
                 id="message"
                 name="message"
                 rows={5}
-                placeholder="Il comando, la crate o la pagina."
+                placeholder={t.messagePlaceholder}
                 aria-invalid={Boolean(errors.message)}
                 aria-describedby={errors.message ? "message-error" : undefined}
                 className="border border-white/20 bg-[#10141c] px-3 py-2 text-ink placeholder:text-muted"
@@ -176,15 +178,15 @@ export function Contact() {
               type="submit"
               className="inline-flex min-h-11 items-center justify-center bg-primary px-5 font-semibold text-white shadow-glow transition-[background-color,box-shadow] duration-200 hover:bg-[#3d82ff]"
             >
-              {site.cta}
+              {t.cta}
             </button>
-            <p className="text-sm text-ink">Si apre la tua email. Devi solo premere invia.</p>
-            <a href={`mailto:${site.email}?subject=${encodeURIComponent("Preventivo")}`} className="inline-flex min-h-11 items-center text-primary-glow hover:text-ink">
-              Scrivimi senza compilare il form
+            <p className="text-sm text-ink">{t.mailHint}</p>
+            <a href={`mailto:${site.email}?subject=${encodeURIComponent(t.mail.subject)}`} className="inline-flex min-h-11 items-center text-primary-glow hover:text-ink">
+              {t.mailSkip}
             </a>
             {ready ? (
               <p role="status" className="text-sm text-muted">
-                Ho preparato l’email. Inviala dal programma che si è aperto.
+                {t.mailSent}
               </p>
             ) : null}
           </form>

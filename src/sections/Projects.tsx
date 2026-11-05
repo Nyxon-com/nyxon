@@ -5,7 +5,7 @@ import { GlassCard } from "../components/GlassCard";
 import { Button } from "../components/Button";
 import { Section } from "../components/Section";
 import { categories, projects, type Category } from "../data/projects";
-import { site } from "../data/site";
+import { useI18n } from "../i18n/language";
 
 function Tilt({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -38,6 +38,7 @@ function Tilt({ children }: { children: ReactNode }) {
 }
 
 export function Projects() {
+  const { t } = useI18n();
   const initial = new URLSearchParams(window.location.search).get("categoria");
   const [filter, setFilter] = useState<Category | "tutti">(
     initial === "web" || initial === "plugin" ? initial : "tutti",
@@ -56,32 +57,32 @@ export function Projects() {
   return (
     <Section
       id="progetti"
-      title="Plugin"
-      lede="Quattro repository pubblici. Versioni e dipendenze sono quelle dei README."
+      title={t.projectsTitle}
+      lede={t.projectsLede}
     >
-      <div className="mb-5 flex flex-wrap gap-2" role="group" aria-label="Filtra i progetti">
-        {categories.map((category) => (
+      <div className="mb-5 flex flex-wrap gap-2" role="group" aria-label={t.filterLabel}>
+        {categories.map((id) => (
           <button
-            key={category.id}
+            key={id}
             type="button"
-            aria-pressed={filter === category.id}
-            onClick={() => choose(category.id)}
+            aria-pressed={filter === id}
+            onClick={() => choose(id)}
             className={`min-h-11 px-4 ${
-              filter === category.id
+              filter === id
                 ? "bg-primary text-white"
                 : "border border-white/15 text-muted hover:text-ink"
-            } ${category.id === "web" ? "rounded-full" : ""}`}
+            } ${id === "web" ? "rounded-full" : ""}`}
           >
-            {category.label}
+            {t.filters[id]}
           </button>
         ))}
       </div>
 
       {visible.length === 0 ? (
         <GlassCard className="p-6">
-          <p>Non ho un sito di un cliente da mettere qui.</p>
+          <p>{t.emptyWeb}</p>
           <div className="mt-4">
-            <Button href="?tipo=sito#contatto">{site.cta}</Button>
+            <Button href="?tipo=sito#contatto">{t.cta}</Button>
           </div>
         </GlassCard>
       ) : (
@@ -93,9 +94,9 @@ export function Projects() {
                   <p className="text-sm text-primary-glow" translate="no">
                     {project.title}
                   </p>
-                  <h3 className="mt-2 font-display text-2xl font-semibold">{project.outcome}</h3>
-                  <p className="mt-2 flex-1 text-muted">{project.detail}</p>
-                  <ul className="mt-4 flex flex-wrap gap-2" aria-label="Tecnologie">
+                  <h3 className="mt-2 font-display text-2xl font-semibold">{t.plugin[project.slug].title}</h3>
+                  <p className="mt-2 flex-1 text-muted">{t.plugin[project.slug].text}</p>
+                  <ul className="mt-4 flex flex-wrap gap-2" aria-label={t.techLabel}>
                     {project.stack.map((item) => (
                       <li key={item} className="border border-white/10 px-2 py-1 text-xs text-muted" translate="no">
                         {item}
@@ -103,13 +104,13 @@ export function Projects() {
                     ))}
                   </ul>
                   <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
-                    <Button href={`?tipo=${project.quote}#contatto`}>{site.cta}</Button>
+                    <Button href={`?tipo=${project.quote}#contatto`}>{t.cta}</Button>
                     {project.href ? (
                       <a
                         href={project.href}
                         className="inline-flex min-h-11 items-center gap-1 text-muted hover:text-ink"
                       >
-                        Codice
+                        {t.code}
                         <ArrowUpRight aria-hidden="true" size={18} />
                       </a>
                     ) : null}
@@ -122,8 +123,8 @@ export function Projects() {
       )}
       {visible.length > 0 ? (
         <div className="mt-8 flex flex-wrap items-center gap-4">
-          <p>Per un plugin dello stesso tipo, scrivi il comando che ti serve.</p>
-          <Button href="?tipo=plugin#contatto">{site.cta}</Button>
+          <p>{t.samePlugin}</p>
+          <Button href="?tipo=plugin#contatto">{t.cta}</Button>
         </div>
       ) : null}
     </Section>

@@ -2,16 +2,19 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { homePath, isServerPage, sectionHref, serverPath, site } from "../data/site";
 import { Button } from "../components/Button";
+import { LanguageSelect } from "../components/LanguageSelect";
+import { useI18n } from "../i18n/language";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const { t } = useI18n();
   const links = [
-    { href: sectionHref("#servizi"), label: "Servizi" },
-    { href: sectionHref("#progetti"), label: "Plugin" },
-    { href: serverPath(), label: "Server" },
-    { href: sectionHref("#processo"), label: "Processo" },
-    { href: sectionHref("#prezzi"), label: "Prezzi" },
-    { href: sectionHref("#faq"), label: "Domande" },
+    { href: sectionHref("#servizi"), label: t.nav.servizi },
+    { href: sectionHref("#progetti"), label: t.nav.plugin },
+    { href: serverPath(), label: t.nav.server },
+    { href: sectionHref("#processo"), label: t.nav.processo },
+    { href: sectionHref("#prezzi"), label: t.nav.prezzi },
+    { href: sectionHref("#faq"), label: t.nav.faq },
   ];
 
   return (
@@ -20,7 +23,7 @@ export function Navbar() {
         <a href={isServerPage() ? homePath() : "#top"} className="font-display text-xl font-semibold" translate="no">
           {site.name}
         </a>
-        <nav aria-label="Pagine" className="hidden items-center gap-5 lg:flex">
+        <nav aria-label={t.navLabel} className="hidden items-center gap-5 lg:flex">
           {links.map((link) => (
             <a
               key={link.href}
@@ -32,8 +35,9 @@ export function Navbar() {
             </a>
           ))}
         </nav>
+        <LanguageSelect />
         <div className="hidden lg:block">
-          <Button href={sectionHref("#contatto")}>{site.cta}</Button>
+          <Button href={sectionHref("#contatto")}>{t.cta}</Button>
         </div>
         <button
           type="button"
@@ -43,11 +47,11 @@ export function Navbar() {
           onClick={() => setOpen((value) => !value)}
         >
           {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-          <span className="sr-only">{open ? "Chiudi il menu" : "Apri il menu"}</span>
+          <span className="sr-only">{open ? t.menuClose : t.menuOpen}</span>
         </button>
       </div>
       {open ? (
-        <nav id="menu-mobile" aria-label="Pagine" className="flex flex-col px-4 pb-4 lg:hidden">
+        <nav id="menu-mobile" aria-label={t.navLabel} className="flex flex-col px-4 pb-4 lg:hidden">
           {links.map((link) => (
             <a
               key={link.href}
@@ -60,7 +64,7 @@ export function Navbar() {
             </a>
           ))}
           <Button href={sectionHref("#contatto")} onClick={() => setOpen(false)}>
-            {site.cta}
+            {t.cta}
           </Button>
         </nav>
       ) : null}

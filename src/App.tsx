@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { LazyMotion, domAnimation } from "framer-motion";
 import { Backdrop } from "./components/Backdrop";
 import { isServerPage } from "./data/site";
+import { useI18n } from "./i18n/language";
 import { Servers } from "./pages/Servers";
 import { Navbar } from "./sections/Navbar";
 import { Hero } from "./sections/Hero";
@@ -15,9 +16,9 @@ import { Footer } from "./sections/Footer";
 
 export default function App() {
   const serverPage = isServerPage();
+  const { t } = useI18n();
 
   useEffect(() => {
-    document.title = serverPage ? "Nyxon — Server made" : "Nyxon — plugin Paper, server e siti";
     const id = window.location.hash.replace("#", "");
     if (!id) return;
     document.getElementById(id)?.scrollIntoView();
@@ -27,7 +28,7 @@ export default function App() {
     <LazyMotion features={domAnimation}>
       <Backdrop />
       <a href="#contenuto" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-primary focus:px-3 focus:py-2">
-        Salta al contenuto
+        {t.skip}
       </a>
       <Navbar />
       {serverPage ? (

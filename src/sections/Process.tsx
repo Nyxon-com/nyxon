@@ -1,13 +1,15 @@
 import { Reveal } from "../components/Reveal";
 import { Section } from "../components/Section";
-import { steps } from "../data/process";
 import { skills } from "../data/skills";
+import { useI18n } from "../i18n/language";
 
 export function Process() {
+  const { t } = useI18n();
+
   return (
-    <Section id="processo" title="Come lavoro" lede="Dal messaggio al jar, o alla pagina.">
+    <Section id="processo" title={t.processTitle} lede={t.processLede}>
       <ol className="grid gap-4 md:grid-cols-4">
-        {steps.map((step, index) => (
+        {t.steps.map((step, index) => (
           <li key={step.title}>
             <Reveal delay={index * 0.05}>
               <article className="h-full border-l border-primary/50 pl-4">

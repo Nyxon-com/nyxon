@@ -6,22 +6,37 @@ export function isServerPage() {
   return window.location.pathname.replace(/\/$/, "").endsWith("/server");
 }
 
+function langQuery() {
+  const lang = new URLSearchParams(window.location.search).get("lang");
+  if (lang !== "it" && lang !== "en" && lang !== "es" && lang !== "de" && lang !== "fr") return "";
+  return `lang=${lang}`;
+}
+
+function withLang(path: string) {
+  const lang = langQuery();
+  if (!lang) return path;
+  const hashAt = path.indexOf("#");
+  const hash = hashAt >= 0 ? path.slice(hashAt) : "";
+  const base = hashAt >= 0 ? path.slice(0, hashAt) : path;
+  return `${base}${base.includes("?") ? "&" : "?"}${lang}${hash}`;
+}
+
 export function homePath() {
   const root = rootPath();
-  return root === "" ? "/" : `${root}/`;
+  return withLang(root === "" ? "/" : `${root}/`);
 }
 
 export function serverPath() {
-  return `${rootPath()}/server`;
+  return withLang(`${rootPath()}/server`);
 }
 
 export function sectionHref(hash: string) {
   if (!isServerPage()) return hash;
-  return `${rootPath()}/${hash}`;
+  return withLang(`${rootPath()}/${hash}`);
 }
 
 export function quoteHref(tipo: "sito" | "plugin" | "server") {
-  return `${homePath()}?tipo=${tipo}#contatto`;
+  return withLang(`${rootPath() === "" ? "/" : `${rootPath()}/`}?tipo=${tipo}#contatto`);
 }
 
 export function mergeQuery(href: string) {
@@ -36,14 +51,7 @@ export function mergeQuery(href: string) {
 
 export const site = {
   name: "Nyxon",
-  role: "Web & Minecraft Developer",
   email: "nyxonantoni@gmail.com",
   github: "https://github.com/Nyxon-com",
   discord: "",
-  response: "Rispondo in italiano entro un giorno.",
-  availability: "Questo mese ho posto per un lavoro.",
-  cta: "Preventivo",
-  headlineLead: "Plugin Paper, server e siti.",
-  headlineRest: "Core, crate, arene, shop.",
-  lede: "Quelli pubblici sono su GitHub. Gli altri li scrivo su richiesta: comandi, permessi e YAML.",
 };
