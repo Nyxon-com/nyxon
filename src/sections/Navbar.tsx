@@ -7,7 +7,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const links = [
     { href: sectionHref("#servizi"), label: "Servizi" },
-    { href: sectionHref("#progetti"), label: "Progetti" },
+    { href: sectionHref("#progetti"), label: "Plugin" },
     { href: serverPath(), label: "Server" },
     { href: sectionHref("#processo"), label: "Processo" },
     { href: sectionHref("#prezzi"), label: "Prezzi" },
@@ -33,7 +33,7 @@ export function Navbar() {
           ))}
         </nav>
         <div className="hidden lg:block">
-          <Button href={sectionHref("#contatto")}>Richiedi un preventivo</Button>
+          <Button href={sectionHref("#contatto")}>{site.cta}</Button>
         </div>
         <button
           type="button"
@@ -60,7 +60,7 @@ export function Navbar() {
             </a>
           ))}
           <Button href={sectionHref("#contatto")} onClick={() => setOpen(false)}>
-            Richiedi un preventivo
+            {site.cta}
           </Button>
         </nav>
       ) : null}

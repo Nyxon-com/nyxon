@@ -10,8 +10,8 @@ export function Services() {
   return (
     <Section
       id="servizi"
-      title="Cosa ottieni"
-      lede="Tre lavori, tre risultati. Lo stack viene dopo, nel preventivo."
+      title="Cosa faccio"
+      lede="Plugin, server o una pagina. Il prezzo arriva dopo, con l’elenco di cosa è dentro."
     >
       <ul className="grid gap-4 md:grid-cols-3">
         {services.map((service, index) => {

@@ -2,10 +2,11 @@ import { Button } from "../components/Button";
 import { GlassCard } from "../components/GlassCard";
 import { Section } from "../components/Section";
 import { packages } from "../data/packages";
+import { site } from "../data/site";
 
 export function Pricing() {
   return (
-    <Section id="prezzi" title="Pacchetti" lede="Il prezzo sta nella prima risposta, insieme a cosa non è incluso.">
+    <Section id="prezzi" title="Prezzi" lede="Il prezzo sta nel preventivo, insieme a cosa non è incluso.">
       <ul className="grid gap-4 lg:grid-cols-3">
         {packages.map((item) => (
           <li key={item.id}>
@@ -18,7 +19,7 @@ export function Pricing() {
                 ))}
               </ul>
               <div className="mt-6">
-                <Button href={`?tipo=${item.tipo}#contatto`}>Richiedi un preventivo</Button>
+                <Button href={`?tipo=${item.tipo}#contatto`}>{site.cta}</Button>
               </div>
             </GlassCard>
           </li>

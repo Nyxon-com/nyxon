@@ -5,7 +5,7 @@ import { skills } from "../data/skills";
 
 export function Process() {
   return (
-    <Section id="processo" title="Come si parte" lede="Quattro passi, sempre gli stessi.">
+    <Section id="processo" title="Come lavoro" lede="Dal messaggio al jar, o alla pagina.">
       <ol className="grid gap-4 md:grid-cols-4">
         {steps.map((step, index) => (
           <li key={step.title}>

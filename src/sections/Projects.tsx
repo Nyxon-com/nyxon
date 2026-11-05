@@ -5,6 +5,7 @@ import { GlassCard } from "../components/GlassCard";
 import { Button } from "../components/Button";
 import { Section } from "../components/Section";
 import { categories, projects, type Category } from "../data/projects";
+import { site } from "../data/site";
 
 function Tilt({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -55,8 +56,8 @@ export function Projects() {
   return (
     <Section
       id="progetti"
-      title="Lavori che puoi aprire"
-      lede="Quattro plugin pubblici."
+      title="Plugin"
+      lede="Quattro repository pubblici. Versioni e dipendenze sono quelle dei README."
     >
       <div className="mb-5 flex flex-wrap gap-2" role="group" aria-label="Filtra i progetti">
         {categories.map((category) => (
@@ -78,9 +79,9 @@ export function Projects() {
 
       {visible.length === 0 ? (
         <GlassCard className="p-6">
-          <p>Questa landing è il tipo di pagina che consegno. La tua parla del tuo server.</p>
+          <p>Non ho un sito di un cliente da mettere qui.</p>
           <div className="mt-4">
-            <Button href="?tipo=sito#contatto">Richiedi un preventivo</Button>
+            <Button href="?tipo=sito#contatto">{site.cta}</Button>
           </div>
         </GlassCard>
       ) : (
@@ -102,7 +103,7 @@ export function Projects() {
                     ))}
                   </ul>
                   <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
-                    <Button href={`?tipo=${project.quote}#contatto`}>Lo voglio sul mio server</Button>
+                    <Button href={`?tipo=${project.quote}#contatto`}>{site.cta}</Button>
                     {project.href ? (
                       <a
                         href={project.href}
@@ -121,8 +122,8 @@ export function Projects() {
       )}
       {visible.length > 0 ? (
         <div className="mt-8 flex flex-wrap items-center gap-4">
-          <p>Ti serve lo stesso sistema sul tuo server?</p>
-          <Button href="?tipo=plugin#contatto">Richiedi un preventivo</Button>
+          <p>Per un plugin dello stesso tipo, scrivi il comando che ti serve.</p>
+          <Button href="?tipo=plugin#contatto">{site.cta}</Button>
         </div>
       ) : null}
     </Section>

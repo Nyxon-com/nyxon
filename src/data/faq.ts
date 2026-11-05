@@ -1,18 +1,18 @@
 export const faq = [
   {
     q: "Quanto costa?",
-    a: "Un plugin con comandi, permessi e config è un lavoro. Un network di più server è un altro. Il prezzo sta nella prima risposta, insieme a cosa non è incluso.",
+    a: "Lo scrivo nella prima risposta, insieme a cosa non è incluso. Un plugin con pochi comandi e un network non hanno lo stesso prezzo.",
   },
   {
     q: "In quanto tempo?",
-    a: "I tempi stanno nel preventivo. Un plugin piccolo e un server completo non hanno gli stessi giorni.",
+    a: "I giorni stanno nel preventivo. Dipende da comandi, GUI e da quanti plugin vanno collegati.",
   },
   {
     q: "Dopo la consegna?",
-    a: "Sistemo i difetti del lavoro che ti ho consegnato. Le funzioni nuove sono un altro lavoro.",
+    a: "Correggo i bug di jar, config e comandi che ti ho consegnato. I comandi nuovi si quotano a parte.",
   },
   {
-    q: "Lavori solo su Minecraft?",
-    a: "No. Faccio anche siti. I plugin sono per Paper.",
+    q: "Solo Minecraft?",
+    a: "No. Faccio anche siti. I plugin li scrivo per Paper.",
   },
 ];

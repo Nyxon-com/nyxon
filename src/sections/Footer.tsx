@@ -9,14 +9,14 @@ export function Footer() {
           <p className="font-display text-2xl font-semibold" translate="no">
             {site.name}
           </p>
-          <Button href={sectionHref("#contatto")}>Richiedi un preventivo</Button>
+          <Button href={sectionHref("#contatto")}>{site.cta}</Button>
         </div>
         <nav aria-label="Piè di pagina" className="flex flex-wrap gap-x-5 gap-y-2">
           <a href={sectionHref("#servizi")} className="min-h-11 py-2 text-muted hover:text-ink">
             Servizi
           </a>
           <a href={sectionHref("#progetti")} className="min-h-11 py-2 text-muted hover:text-ink">
-            Progetti
+            Plugin
           </a>
           <a href={serverPath()} className="min-h-11 py-2 text-muted hover:text-ink">
             Server

@@ -15,13 +15,13 @@ export function Hero() {
         </h1>
         <p className="mt-5 max-w-xl text-lg text-ink">{site.lede}</p>
         <div className="mt-7 flex flex-wrap items-center gap-3">
-          <Button href="#contatto">Richiedi un preventivo</Button>
+          <Button href="#contatto">{site.cta}</Button>
           <Button href="#progetti" variant="ghost">
-            Vedi i progetti
+            Vedi i plugin
           </Button>
         </div>
         <p className="mt-4 max-w-xl text-ink">
-          {site.availability} Preventivo entro 24 ore. {site.response}
+          {site.availability} {site.response}
         </p>
       </div>
       <GlassCard fill={false} className="p-6">

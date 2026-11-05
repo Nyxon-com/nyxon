@@ -68,7 +68,7 @@ export function Contact() {
   return (
     <Section
       id="contatto"
-      title="Richiedi un preventivo"
+      title="Preventivo"
       lede={site.response}
     >
       <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
@@ -160,7 +160,7 @@ export function Contact() {
                 id="message"
                 name="message"
                 rows={5}
-                placeholder="Un plugin per le aste, o un sito per il server…"
+                placeholder="Il comando, la crate o la pagina."
                 aria-invalid={Boolean(errors.message)}
                 aria-describedby={errors.message ? "message-error" : undefined}
                 className="border border-white/20 bg-[#10141c] px-3 py-2 text-ink placeholder:text-muted"
@@ -176,7 +176,7 @@ export function Contact() {
               type="submit"
               className="inline-flex min-h-11 items-center justify-center bg-primary px-5 font-semibold text-white shadow-glow transition-[background-color,box-shadow] duration-200 hover:bg-[#3d82ff]"
             >
-              Richiedi un preventivo
+              {site.cta}
             </button>
             <p className="text-sm text-ink">Si apre la tua email. Devi solo premere invia.</p>
             <a href={`mailto:${site.email}?subject=${encodeURIComponent("Preventivo")}`} className="inline-flex min-h-11 items-center text-primary-glow hover:text-ink">

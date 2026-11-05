@@ -3,18 +3,18 @@ export const packages = [
     id: "sito",
     title: "Sito",
     tipo: "sito",
-    points: ["Una landing che porta la richiesta", "Testi e form di contatto", "Pubblicazione"],
+    points: ["Pagina del server o del plugin", "Testi e form", "Messa online"],
   },
   {
     id: "plugin",
     title: "Plugin Paper",
     tipo: "plugin",
-    points: ["Un sistema su misura", "Comandi, permessi e config", "Prova sul server"],
+    points: ["Comandi e permessi", "Config YAML", "Prova sul server di test"],
   },
   {
     id: "setup",
     title: "Setup server",
     tipo: "server",
-    points: ["Paper, plugin e mondo", "I sistemi collegati tra loro", "Consegna pronta da aprire"],
+    points: ["Paper e plugin", "Mondo, config e permessi", "Elenco comandi dello staff"],
   },
 ] as const;
