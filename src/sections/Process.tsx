@@ -1,6 +1,6 @@
 import { Reveal } from "../components/Reveal";
 import { Section } from "../components/Section";
-import { skills } from "../data/skills";
+import { heroSkills } from "../data/skills";
 import { useI18n } from "../i18n/language";
 
 export function Process() {
@@ -21,7 +21,7 @@ export function Process() {
           </li>
         ))}
       </ol>
-      <p className="mt-8 text-muted">{skills.map((skill) => skill.name).join(", ")}.</p>
+      <p className="mt-8 text-muted">{heroSkills.join(", ")}.</p>
     </Section>
   );
 }

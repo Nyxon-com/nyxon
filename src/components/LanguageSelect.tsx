@@ -14,8 +14,8 @@ export function LanguageSelect() {
           aria-pressed={lang === item.id}
           aria-label={item.label}
           onClick={() => setLang(item.id)}
-          className={`min-h-11 min-w-9 px-1 text-sm font-semibold ${
-            lang === item.id ? "text-ink" : "text-muted hover:text-ink"
+          className={`min-h-11 min-w-9 px-1 text-sm font-semibold underline-offset-4 ${
+            lang === item.id ? "text-ink underline" : "text-muted hover:text-ink"
           }`}
         >
           {item.short}

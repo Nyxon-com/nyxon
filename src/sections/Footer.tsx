@@ -33,7 +33,7 @@ export function Footer() {
           <a href={`mailto:${site.email}`} className="min-h-11 py-2 text-muted hover:text-ink">
             {t.email}
           </a>
-          <a href={site.github} className="min-h-11 py-2 text-muted hover:text-ink">
+          <a href={site.github} target="_blank" rel="noopener noreferrer" className="min-h-11 py-2 text-muted hover:text-ink">
             GitHub
           </a>
         </nav>

@@ -71,7 +71,7 @@ export function Projects() {
               filter === id
                 ? "bg-primary text-white"
                 : "border border-white/15 text-muted hover:text-ink"
-            } ${id === "web" ? "rounded-full" : ""}`}
+            }`}
           >
             {t.filters[id]}
           </button>
@@ -108,6 +108,8 @@ export function Projects() {
                     {project.href ? (
                       <a
                         href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex min-h-11 items-center gap-1 text-muted hover:text-ink"
                       >
                         {t.code}

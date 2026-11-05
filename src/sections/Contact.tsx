@@ -197,7 +197,7 @@ export function Contact() {
             <Mail aria-hidden="true" />
             {site.email}
           </a>
-          <a href={site.github} className="inline-flex min-h-11 items-center gap-2 text-ink hover:text-primary-glow">
+          <a href={site.github} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 text-ink hover:text-primary-glow">
             <Github aria-hidden="true" />
             GitHub
           </a>
