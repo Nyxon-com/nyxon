@@ -18,6 +18,9 @@ export default function App() {
 
   useEffect(() => {
     document.title = serverPage ? "Nyxon — Server made" : "Nyxon — plugin, server e siti per Minecraft";
+    const id = window.location.hash.replace("#", "");
+    if (!id) return;
+    document.getElementById(id)?.scrollIntoView();
   }, [serverPage]);
 
   return (

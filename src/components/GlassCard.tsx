@@ -12,8 +12,14 @@ export function GlassCard({ children, className = "", cut = true, fill = true }:
   const shape = cut ? "cut" : "";
   const height = fill ? "h-full" : "";
   return (
-    <div className={`${height} bg-gradient-to-br from-primary/80 via-white/15 to-primary-glow/40 p-px ${shape}`}>
-      <div className={`glass ${height} ${shape} ${className}`}>{children}</div>
+    <div className={`relative ${height}`}>
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/80 via-white/15 to-primary-glow/40 p-px ${shape}`}
+      >
+        <div className={`glass h-full w-full ${shape}`} />
+      </div>
+      <div className={`relative ${height} ${className}`}>{children}</div>
     </div>
   );
 }

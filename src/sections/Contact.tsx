@@ -35,7 +35,11 @@ export function Contact() {
   useEffect(() => {
     const sync = () => setType(quoteType());
     window.addEventListener("hashchange", sync);
-    return () => window.removeEventListener("hashchange", sync);
+    window.addEventListener("popstate", sync);
+    return () => {
+      window.removeEventListener("hashchange", sync);
+      window.removeEventListener("popstate", sync);
+    };
   }, []);
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -71,7 +75,7 @@ export function Contact() {
         <GlassCard className="p-6">
           <form noValidate onSubmit={onSubmit} className="grid gap-4">
             {Object.keys(errors).length > 0 ? (
-              <div ref={summary} tabIndex={-1} role="alert" aria-labelledby="error-title" className="border border-primary/40 p-4">
+              <div ref={summary} tabIndex={-1} role="alert" aria-labelledby="error-title" className="border border-[#ffb4b4]/60 p-4">
                 <h3 id="error-title" className="font-semibold">
                   Manca qualcosa
                 </h3>
@@ -97,7 +101,7 @@ export function Contact() {
                 autoComplete="name"
                 aria-invalid={Boolean(errors.name)}
                 aria-describedby={errors.name ? "name-error" : undefined}
-                className="min-h-11 border border-white/15 bg-bg px-3 text-ink"
+                className="min-h-11 border border-white/20 bg-[#10141c] px-3 text-ink placeholder:text-muted"
               />
               {errors.name ? (
                 <span id="name-error" className="text-sm text-[#ffb4b4]">
@@ -116,7 +120,7 @@ export function Contact() {
                 placeholder="nome@email.com…"
                 aria-invalid={Boolean(errors.contact)}
                 aria-describedby={errors.contact ? "contact-error" : undefined}
-                className="min-h-11 border border-white/15 bg-bg px-3 text-ink"
+                className="min-h-11 border border-white/20 bg-[#10141c] px-3 text-ink placeholder:text-muted"
               />
               {errors.contact ? (
                 <span id="contact-error" className="text-sm text-[#ffb4b4]">
@@ -134,7 +138,7 @@ export function Contact() {
                 onChange={(event) => setType(event.target.value as typeof type)}
                 aria-invalid={Boolean(errors.type)}
                 aria-describedby={errors.type ? "type-error" : undefined}
-                className="min-h-11 border border-white/15 bg-bg px-3 text-ink"
+                className="min-h-11 border border-white/20 bg-[#10141c] px-3 text-ink"
               >
                 <option value="" disabled>
                   Scegli…
@@ -159,7 +163,7 @@ export function Contact() {
                 placeholder="Un plugin per le aste, o un sito per il server…"
                 aria-invalid={Boolean(errors.message)}
                 aria-describedby={errors.message ? "message-error" : undefined}
-                className="border border-white/15 bg-bg px-3 py-2 text-ink"
+                className="border border-white/20 bg-[#10141c] px-3 py-2 text-ink placeholder:text-muted"
               />
               {errors.message ? (
                 <span id="message-error" className="text-sm text-[#ffb4b4]">
@@ -200,7 +204,6 @@ export function Contact() {
               Discord
             </a>
           ) : null}
-          <p className="text-ink">{site.response}</p>
         </div>
       </div>
     </Section>

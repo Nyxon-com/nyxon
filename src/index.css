@@ -55,9 +55,6 @@
     color: #ffffff;
   }
 
-  section {
-    scroll-margin-top: 5.5rem;
-  }
 }
 
 @layer components {

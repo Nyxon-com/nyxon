@@ -45,8 +45,11 @@ export function Projects() {
 
   function choose(id: Category | "tutti") {
     setFilter(id);
-    const url = id === "tutti" ? "#progetti" : `?categoria=${id}#progetti`;
-    window.history.replaceState(null, "", url);
+    const params = new URLSearchParams(window.location.search);
+    if (id === "tutti") params.delete("categoria");
+    else params.set("categoria", id);
+    const query = params.toString();
+    window.history.replaceState(null, "", `${window.location.pathname}${query ? `?${query}` : ""}#progetti`);
   }
 
   return (

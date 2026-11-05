@@ -24,6 +24,16 @@ export function quoteHref(tipo: "sito" | "plugin" | "server") {
   return `${homePath()}?tipo=${tipo}#contatto`;
 }
 
+export function mergeQuery(href: string) {
+  const hashAt = href.indexOf("#");
+  const hash = hashAt >= 0 ? href.slice(hashAt) : "";
+  const incoming = new URLSearchParams(hashAt >= 0 ? href.slice(0, hashAt) : href);
+  const params = new URLSearchParams(window.location.search);
+  incoming.forEach((value, key) => params.set(key, value));
+  const query = params.toString();
+  return `${window.location.pathname}${query ? `?${query}` : ""}${hash}`;
+}
+
 export const site = {
   name: "Nyxon",
   role: "Web & Minecraft Developer",

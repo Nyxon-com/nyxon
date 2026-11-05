@@ -8,7 +8,7 @@ export function Servers() {
     <main id="contenuto" className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
       <h1 className="font-display text-[2.25rem] font-semibold leading-[1.45] sm:text-[3.75rem]">Server made</h1>
       <p className="mt-4 max-w-2xl text-muted">Server che sto costruendo. Non sono online.</p>
-      <ul className="mt-10 grid gap-4 md:grid-cols-2">
+      <ul className={`mt-10 grid gap-4 ${servers.length > 1 ? "md:grid-cols-2" : "mx-auto w-full max-w-2xl"}`}>
         {servers.map((server) => (
           <li key={server.slug}>
             <GlassCard className="flex h-full flex-col p-6">

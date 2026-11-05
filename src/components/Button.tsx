@@ -1,4 +1,5 @@
 import type { MouseEvent, ReactNode } from "react";
+import { mergeQuery } from "../data/site";
 
 type Props = {
   href: string;
@@ -17,7 +18,7 @@ export function Button({ href, children, variant = "primary", onClick }: Props) 
     onClick?.();
     if (!href.startsWith("?")) return;
     event.preventDefault();
-    window.history.pushState(null, "", href);
+    window.history.pushState(null, "", mergeQuery(href));
     document.getElementById("contatto")?.scrollIntoView();
     window.dispatchEvent(new HashChangeEvent("hashchange"));
   }
