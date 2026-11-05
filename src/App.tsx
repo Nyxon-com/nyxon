@@ -8,6 +8,7 @@ import { Navbar } from "./sections/Navbar";
 import { Hero } from "./sections/Hero";
 import { Services } from "./sections/Services";
 import { Projects } from "./sections/Projects";
+import { Design } from "./sections/Design";
 import { Process } from "./sections/Process";
 import { Pricing } from "./sections/Pricing";
 import { Faq } from "./sections/Faq";
@@ -40,6 +41,7 @@ export default function App() {
         </div>
         <Services />
         <Projects />
+        <Design />
         <Process />
         <Pricing />
         <Faq />

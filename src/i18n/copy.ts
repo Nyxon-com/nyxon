@@ -30,7 +30,10 @@ export type Copy = {
   availability: string;
   response: string;
   skillsLabel: string;
-  nav: { servizi: string; plugin: string; server: string; processo: string; prezzi: string; faq: string };
+  nav: { servizi: string; plugin: string; design: string; server: string; processo: string; prezzi: string; faq: string };
+  designTitle: string;
+  designLede: string;
+  design: { banner: Card; icon: Card; wordmark: Card; poster: Card };
   servicesTitle: string;
   servicesLede: string;
   services: { siti: Card; plugin: Card; server: Card };
@@ -101,7 +104,15 @@ const it: Copy = {
   availability: "Questo mese ho posto per un lavoro.",
   response: "Rispondo in italiano entro un giorno.",
   skillsLabel: "Competenze",
-  nav: { servizi: "Servizi", plugin: "Plugin", server: "Server", processo: "Processo", prezzi: "Prezzi", faq: "Domande" },
+  nav: { servizi: "Servizi", plugin: "Plugin", design: "Design", server: "Server", processo: "Processo", prezzi: "Prezzi", faq: "Domande" },
+  designTitle: "Design",
+  designLede: "Logo pack di RiftMC, un server Minecraft MMORPG. Mascotte, wordmark, banner e poster 9:16.",
+  design: {
+    banner: { title: "Banner", text: "Mascotte, wordmark e una crepa. Per header e Discord." },
+    icon: { title: "Icona", text: "Pianeta, occhiali e due spade. Per l’icona del server." },
+    wordmark: { title: "Wordmark", text: "RIFTMC in piatto, con le spade dietro." },
+    poster: { title: "Poster 9:16", text: "Stessa mascotte e un solo pianeta. Per TikTok e Shorts." },
+  },
   servicesTitle: "Cosa faccio",
   servicesLede: "Plugin, server o una pagina. Il prezzo arriva dopo, con l’elenco di cosa è dentro.",
   services: {
@@ -207,7 +218,15 @@ const en: Copy = {
   availability: "I can take one new job this month.",
   response: "I reply in Italian or English within a day.",
   skillsLabel: "Skills",
-  nav: { servizi: "Services", plugin: "Plugins", server: "Server", processo: "Process", prezzi: "Prices", faq: "Questions" },
+  nav: { servizi: "Services", plugin: "Plugins", design: "Design", server: "Server", processo: "Process", prezzi: "Prices", faq: "Questions" },
+  designTitle: "Design",
+  designLede: "Logo pack for RiftMC, a Minecraft MMORPG server. Mascot, wordmark, banner and a 9:16 poster.",
+  design: {
+    banner: { title: "Banner", text: "Mascot, wordmark and one crack. For a header and Discord." },
+    icon: { title: "Icon", text: "Planet, sunglasses and two swords. For the server icon." },
+    wordmark: { title: "Wordmark", text: "Flat RIFTMC, with the swords behind it." },
+    poster: { title: "Poster 9:16", text: "The same mascot and one planet. For TikTok and Shorts." },
+  },
   servicesTitle: "What I do",
   servicesLede: "A plugin, a server, or a page. The price comes after, with the list of what is included.",
   services: {
@@ -313,7 +332,15 @@ const es: Copy = {
   availability: "Este mes tengo sitio para un trabajo.",
   response: "Respondo en italiano o en español en un día.",
   skillsLabel: "Competencias",
-  nav: { servizi: "Servicios", plugin: "Plugins", server: "Server", processo: "Proceso", prezzi: "Precios", faq: "Preguntas" },
+  nav: { servizi: "Servicios", plugin: "Plugins", design: "Diseño", server: "Server", processo: "Proceso", prezzi: "Precios", faq: "Preguntas" },
+  designTitle: "Diseño",
+  designLede: "Pack de logos de RiftMC, un servidor Minecraft MMORPG. Mascota, wordmark, banner y póster 9:16.",
+  design: {
+    banner: { title: "Banner", text: "Mascota, wordmark y una grieta. Para la cabecera y Discord." },
+    icon: { title: "Icono", text: "Planeta, gafas y dos espadas. Para el icono del servidor." },
+    wordmark: { title: "Wordmark", text: "RIFTMC en plano, con las espadas detrás." },
+    poster: { title: "Póster 9:16", text: "La misma mascota y un solo planeta. Para TikTok y Shorts." },
+  },
   servicesTitle: "Qué hago",
   servicesLede: "Un plugin, un servidor o una página. El precio llega después, con la lista de lo que incluye.",
   services: {
@@ -419,7 +446,15 @@ const de: Copy = {
   availability: "Diesen Monat habe ich Platz für einen Auftrag.",
   response: "Ich antworte auf Italienisch oder Deutsch innerhalb eines Tages.",
   skillsLabel: "Kenntnisse",
-  nav: { servizi: "Leistungen", plugin: "Plugins", server: "Server", processo: "Ablauf", prezzi: "Preise", faq: "Fragen" },
+  nav: { servizi: "Leistungen", plugin: "Plugins", design: "Design", server: "Server", processo: "Ablauf", prezzi: "Preise", faq: "Fragen" },
+  designTitle: "Design",
+  designLede: "Logo-Pack für RiftMC, einen Minecraft-MMORPG-Server. Maskottchen, Wordmark, Banner und Poster 9:16.",
+  design: {
+    banner: { title: "Banner", text: "Maskottchen, Wordmark und ein Riss. Für Header und Discord." },
+    icon: { title: "Icon", text: "Planet, Brille und zwei Schwerter. Für das Server-Icon." },
+    wordmark: { title: "Wordmark", text: "Flaches RIFTMC, die Schwerter dahinter." },
+    poster: { title: "Poster 9:16", text: "Dasselbe Maskottchen und ein Planet. Für TikTok und Shorts." },
+  },
   servicesTitle: "Was ich mache",
   servicesLede: "Ein Plugin, ein Server oder eine Seite. Der Preis kommt danach, mit der Liste dessen, was enthalten ist.",
   services: {
@@ -525,7 +560,15 @@ const fr: Copy = {
   availability: "Ce mois-ci j’ai de la place pour un travail.",
   response: "Je réponds en italien ou en français sous un jour.",
   skillsLabel: "Compétences",
-  nav: { servizi: "Services", plugin: "Plugins", server: "Serveur", processo: "Déroulement", prezzi: "Prix", faq: "Questions" },
+  nav: { servizi: "Services", plugin: "Plugins", design: "Design", server: "Serveur", processo: "Déroulement", prezzi: "Prix", faq: "Questions" },
+  designTitle: "Design",
+  designLede: "Pack de logos pour RiftMC, un serveur Minecraft MMORPG. Mascotte, wordmark, bannière et affiche 9:16.",
+  design: {
+    banner: { title: "Bannière", text: "Mascotte, wordmark et une fissure. Pour l’en-tête et Discord." },
+    icon: { title: "Icône", text: "Planète, lunettes et deux épées. Pour l’icône du serveur." },
+    wordmark: { title: "Wordmark", text: "RIFTMC à plat, les épées derrière." },
+    poster: { title: "Affiche 9:16", text: "La même mascotte et une seule planète. Pour TikTok et Shorts." },
+  },
   servicesTitle: "Ce que je fais",
   servicesLede: "Un plugin, un serveur ou une page. Le prix arrive ensuite, avec la liste de ce qui est inclus.",
   services: {

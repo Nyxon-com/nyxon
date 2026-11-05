@@ -11,6 +11,7 @@ export function Navbar() {
   const links = [
     { href: sectionHref("#servizi"), label: t.nav.servizi },
     { href: sectionHref("#progetti"), label: t.nav.plugin },
+    { href: sectionHref("#design"), label: t.nav.design },
     { href: serverPath(), label: t.nav.server },
     { href: sectionHref("#processo"), label: t.nav.processo },
     { href: sectionHref("#prezzi"), label: t.nav.prezzi },

@@ -21,6 +21,9 @@ export function Footer() {
           <a href={sectionHref("#progetti")} className="min-h-11 py-2 text-muted hover:text-ink">
             {t.nav.plugin}
           </a>
+          <a href={sectionHref("#design")} className="min-h-11 py-2 text-muted hover:text-ink">
+            {t.nav.design}
+          </a>
           <a href={serverPath()} className="min-h-11 py-2 text-muted hover:text-ink">
             {t.nav.server}
           </a>
