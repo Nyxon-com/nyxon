@@ -13,7 +13,7 @@ export default {
       },
       fontFamily: {
         sans: ["Outfit", "Segoe UI", "sans-serif"],
-        display: ["Syne", "Outfit", "sans-serif"],
+        display: ["Space Grotesk", "Outfit", "sans-serif"],
       },
       boxShadow: {
         glow: "0 0 28px rgba(30, 107, 255, 0.45)",
