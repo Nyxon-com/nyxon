@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import { copy, isLang, type Lang } from "./copy";
-import { isServerPage } from "../data/site";
+import { isDesignPage, isServerPage } from "../data/site";
 
 const STORAGE = "nyxon-lang";
 
@@ -48,7 +48,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const text = copy[lang];
-    const title = isServerPage() ? text.serverPageTitle : text.pageTitle;
+    const title = isServerPage() ? text.serverPageTitle : isDesignPage() ? text.designPageTitle : text.pageTitle;
     try {
       localStorage.setItem(STORAGE, lang);
     } catch {

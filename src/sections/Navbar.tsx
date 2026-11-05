@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { homePath, isServerPage, sectionHref, serverPath, site } from "../data/site";
+import { designPath, homePath, isDesignPage, isServerPage, sectionHref, serverPath, site } from "../data/site";
 import { Button } from "../components/Button";
 import { LanguageSelect } from "../components/LanguageSelect";
 import { useI18n } from "../i18n/language";
@@ -11,7 +11,7 @@ export function Navbar() {
   const links = [
     { href: sectionHref("#servizi"), label: t.nav.servizi },
     { href: sectionHref("#progetti"), label: t.nav.plugin },
-    { href: sectionHref("#design"), label: t.nav.design },
+    { href: designPath(), label: t.nav.design },
     { href: serverPath(), label: t.nav.server },
     { href: sectionHref("#processo"), label: t.nav.processo },
     { href: sectionHref("#prezzi"), label: t.nav.prezzi },
@@ -21,7 +21,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-30 border-b border-white/10 bg-bg/70 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
-        <a href={isServerPage() ? homePath() : "#top"} className="font-display text-xl font-semibold" translate="no">
+        <a href={isServerPage() || isDesignPage() ? homePath() : "#top"} className="font-display text-xl font-semibold" translate="no">
           {site.name}
         </a>
         <nav aria-label={t.navLabel} className="hidden items-center gap-5 lg:flex">
@@ -29,7 +29,11 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              aria-current={link.href === serverPath() && isServerPage() ? "page" : undefined}
+              aria-current={
+                (link.href === serverPath() && isServerPage()) || (link.href === designPath() && isDesignPage())
+                  ? "page"
+                  : undefined
+              }
               className="nav-link min-h-11 py-2 text-muted hover:text-ink"
             >
               {link.label}
@@ -57,7 +61,11 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              aria-current={link.href === serverPath() && isServerPage() ? "page" : undefined}
+              aria-current={
+                (link.href === serverPath() && isServerPage()) || (link.href === designPath() && isDesignPage())
+                  ? "page"
+                  : undefined
+              }
               className="nav-link min-h-11 py-2"
               onClick={() => setOpen(false)}
             >

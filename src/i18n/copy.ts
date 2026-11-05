@@ -31,9 +31,10 @@ export type Copy = {
   response: string;
   skillsLabel: string;
   nav: { servizi: string; plugin: string; design: string; server: string; processo: string; prezzi: string; faq: string };
+  designPageTitle: string;
   designTitle: string;
   designLede: string;
-  design: { banner: Card; icon: Card; wordmark: Card; poster: Card };
+  design: { banner: Card; icon: Card; wordmark: Card; poster: Card; skins: Card };
   servicesTitle: string;
   servicesLede: string;
   services: { siti: Card; plugin: Card; server: Card };
@@ -105,13 +106,15 @@ const it: Copy = {
   response: "Rispondo in italiano entro un giorno.",
   skillsLabel: "Competenze",
   nav: { servizi: "Servizi", plugin: "Plugin", design: "Design", server: "Server", processo: "Processo", prezzi: "Prezzi", faq: "Domande" },
+  designPageTitle: "Nyxon — Design",
   designTitle: "Design",
-  designLede: "Logo pack di RiftMC, un server Minecraft MMORPG. Mascotte, wordmark, banner e poster 9:16.",
+  designLede: "Logo di RiftMC e le skin Nyxon.",
   design: {
     banner: { title: "Banner", text: "Mascotte, wordmark e una crepa. Per header e Discord." },
     icon: { title: "Icona", text: "Pianeta, occhiali e due spade. Per l’icona del server." },
     wordmark: { title: "Wordmark", text: "RIFTMC in piatto, con le spade dietro." },
     poster: { title: "Poster 9:16", text: "Stessa mascotte e un solo pianeta. Per TikTok e Shorts." },
+    skins: { title: "Skin", text: "23 skin Nyxon, vista frontale." },
   },
   servicesTitle: "Cosa faccio",
   servicesLede: "Plugin, server o una pagina. Il prezzo arriva dopo, con l’elenco di cosa è dentro.",
@@ -219,13 +222,15 @@ const en: Copy = {
   response: "I reply in Italian or English within a day.",
   skillsLabel: "Skills",
   nav: { servizi: "Services", plugin: "Plugins", design: "Design", server: "Server", processo: "Process", prezzi: "Prices", faq: "Questions" },
+  designPageTitle: "Nyxon — Design",
   designTitle: "Design",
-  designLede: "Logo pack for RiftMC, a Minecraft MMORPG server. Mascot, wordmark, banner and a 9:16 poster.",
+  designLede: "The RiftMC logo and the Nyxon skins.",
   design: {
     banner: { title: "Banner", text: "Mascot, wordmark and one crack. For a header and Discord." },
     icon: { title: "Icon", text: "Planet, sunglasses and two swords. For the server icon." },
     wordmark: { title: "Wordmark", text: "Flat RIFTMC, with the swords behind it." },
     poster: { title: "Poster 9:16", text: "The same mascot and one planet. For TikTok and Shorts." },
+    skins: { title: "Skins", text: "23 Nyxon skins, front view." },
   },
   servicesTitle: "What I do",
   servicesLede: "A plugin, a server, or a page. The price comes after, with the list of what is included.",
@@ -333,13 +338,15 @@ const es: Copy = {
   response: "Respondo en italiano o en español en un día.",
   skillsLabel: "Competencias",
   nav: { servizi: "Servicios", plugin: "Plugins", design: "Diseño", server: "Server", processo: "Proceso", prezzi: "Precios", faq: "Preguntas" },
+  designPageTitle: "Nyxon — Diseño",
   designTitle: "Diseño",
-  designLede: "Pack de logos de RiftMC, un servidor Minecraft MMORPG. Mascota, wordmark, banner y póster 9:16.",
+  designLede: "El logo de RiftMC y las skins de Nyxon.",
   design: {
     banner: { title: "Banner", text: "Mascota, wordmark y una grieta. Para la cabecera y Discord." },
     icon: { title: "Icono", text: "Planeta, gafas y dos espadas. Para el icono del servidor." },
     wordmark: { title: "Wordmark", text: "RIFTMC en plano, con las espadas detrás." },
     poster: { title: "Póster 9:16", text: "La misma mascota y un solo planeta. Para TikTok y Shorts." },
+    skins: { title: "Skins", text: "23 skins de Nyxon, vista frontal." },
   },
   servicesTitle: "Qué hago",
   servicesLede: "Un plugin, un servidor o una página. El precio llega después, con la lista de lo que incluye.",
@@ -447,13 +454,15 @@ const de: Copy = {
   response: "Ich antworte auf Italienisch oder Deutsch innerhalb eines Tages.",
   skillsLabel: "Kenntnisse",
   nav: { servizi: "Leistungen", plugin: "Plugins", design: "Design", server: "Server", processo: "Ablauf", prezzi: "Preise", faq: "Fragen" },
+  designPageTitle: "Nyxon — Design",
   designTitle: "Design",
-  designLede: "Logo-Pack für RiftMC, einen Minecraft-MMORPG-Server. Maskottchen, Wordmark, Banner und Poster 9:16.",
+  designLede: "Das RiftMC-Logo und die Nyxon-Skins.",
   design: {
     banner: { title: "Banner", text: "Maskottchen, Wordmark und ein Riss. Für Header und Discord." },
     icon: { title: "Icon", text: "Planet, Brille und zwei Schwerter. Für das Server-Icon." },
     wordmark: { title: "Wordmark", text: "Flaches RIFTMC, die Schwerter dahinter." },
     poster: { title: "Poster 9:16", text: "Dasselbe Maskottchen und ein Planet. Für TikTok und Shorts." },
+    skins: { title: "Skins", text: "23 Nyxon-Skins, Vorderansicht." },
   },
   servicesTitle: "Was ich mache",
   servicesLede: "Ein Plugin, ein Server oder eine Seite. Der Preis kommt danach, mit der Liste dessen, was enthalten ist.",
@@ -561,13 +570,15 @@ const fr: Copy = {
   response: "Je réponds en italien ou en français sous un jour.",
   skillsLabel: "Compétences",
   nav: { servizi: "Services", plugin: "Plugins", design: "Design", server: "Serveur", processo: "Déroulement", prezzi: "Prix", faq: "Questions" },
+  designPageTitle: "Nyxon — Design",
   designTitle: "Design",
-  designLede: "Pack de logos pour RiftMC, un serveur Minecraft MMORPG. Mascotte, wordmark, bannière et affiche 9:16.",
+  designLede: "Le logo RiftMC et les skins Nyxon.",
   design: {
     banner: { title: "Bannière", text: "Mascotte, wordmark et une fissure. Pour l’en-tête et Discord." },
     icon: { title: "Icône", text: "Planète, lunettes et deux épées. Pour l’icône du serveur." },
     wordmark: { title: "Wordmark", text: "RIFTMC à plat, les épées derrière." },
     poster: { title: "Affiche 9:16", text: "La même mascotte et une seule planète. Pour TikTok et Shorts." },
+    skins: { title: "Skins", text: "23 skins Nyxon, vue de face." },
   },
   servicesTitle: "Ce que je fais",
   servicesLede: "Un plugin, un serveur ou une page. Le prix arrive ensuite, avec la liste de ce qui est inclus.",

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { LazyMotion, domAnimation } from "framer-motion";
 import { Backdrop } from "./components/Backdrop";
-import { isServerPage } from "./data/site";
+import { isDesignPage, isServerPage } from "./data/site";
 import { useI18n } from "./i18n/language";
 import { Servers } from "./pages/Servers";
 import { Navbar } from "./sections/Navbar";
@@ -17,13 +17,14 @@ import { Footer } from "./sections/Footer";
 
 export default function App() {
   const serverPage = isServerPage();
+  const designPage = isDesignPage();
   const { t } = useI18n();
 
   useEffect(() => {
     const id = window.location.hash.replace("#", "");
     if (!id) return;
     document.getElementById(id)?.scrollIntoView();
-  }, [serverPage]);
+  }, [serverPage, designPage]);
 
   return (
     <LazyMotion features={domAnimation}>
@@ -34,6 +35,10 @@ export default function App() {
       <Navbar />
       {serverPage ? (
         <Servers />
+      ) : designPage ? (
+        <main id="contenuto">
+          <Design />
+        </main>
       ) : (
       <main id="contenuto">
         <div id="top">
@@ -41,7 +46,6 @@ export default function App() {
         </div>
         <Services />
         <Projects />
-        <Design />
         <Process />
         <Pricing />
         <Faq />

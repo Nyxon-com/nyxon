@@ -2,8 +2,16 @@ function rootPath() {
   return import.meta.env.BASE_URL.replace(/\/$/, "");
 }
 
+function pathName() {
+  return window.location.pathname.replace(/\/$/, "");
+}
+
 export function isServerPage() {
-  return window.location.pathname.replace(/\/$/, "").endsWith("/server");
+  return pathName().endsWith("/server");
+}
+
+export function isDesignPage() {
+  return pathName().endsWith("/design");
 }
 
 function langQuery() {
@@ -30,8 +38,12 @@ export function serverPath() {
   return withLang(`${rootPath()}/server`);
 }
 
+export function designPath() {
+  return withLang(`${rootPath()}/design`);
+}
+
 export function sectionHref(hash: string) {
-  if (!isServerPage()) return hash;
+  if (!isServerPage() && !isDesignPage()) return hash;
   return withLang(`${rootPath()}/${hash}`);
 }
 

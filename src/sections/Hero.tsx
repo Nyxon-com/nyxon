@@ -1,6 +1,7 @@
 import { Badge } from "../components/Badge";
 import { Button } from "../components/Button";
 import { GlassCard } from "../components/GlassCard";
+import { designPath } from "../data/site";
 import { heroSkills } from "../data/skills";
 import { useI18n } from "../i18n/language";
 
@@ -20,6 +21,9 @@ export function Hero() {
           <Button href="#contatto">{t.cta}</Button>
           <Button href="#progetti" variant="ghost">
             {t.seePlugins}
+          </Button>
+          <Button href={designPath()} variant="ghost">
+            {t.nav.design}
           </Button>
         </div>
         <p className="mt-4 max-w-xl text-ink">

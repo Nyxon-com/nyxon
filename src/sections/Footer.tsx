@@ -1,4 +1,4 @@
-import { sectionHref, serverPath, site } from "../data/site";
+import { designPath, sectionHref, serverPath, site } from "../data/site";
 import { Button } from "../components/Button";
 import { useI18n } from "../i18n/language";
 
@@ -21,7 +21,7 @@ export function Footer() {
           <a href={sectionHref("#progetti")} className="min-h-11 py-2 text-muted hover:text-ink">
             {t.nav.plugin}
           </a>
-          <a href={sectionHref("#design")} className="min-h-11 py-2 text-muted hover:text-ink">
+          <a href={designPath()} className="min-h-11 py-2 text-muted hover:text-ink">
             {t.nav.design}
           </a>
           <a href={serverPath()} className="min-h-11 py-2 text-muted hover:text-ink">

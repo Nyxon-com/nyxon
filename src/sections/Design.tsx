@@ -14,7 +14,7 @@ export function Design() {
   ] as const;
 
   return (
-    <Section id="design" title={t.designTitle} lede={t.designLede}>
+    <Section id="design" title={t.designTitle} lede={t.designLede} titleAs="h1">
       <figure>
         <img
           src={src("riftmc-banner.jpg")}
@@ -45,6 +45,19 @@ export function Design() {
           </li>
         ))}
       </ul>
+      <figure className="mt-8">
+        <img
+          src={src("nyxon-skins.jpg")}
+          alt={t.design.skins.text}
+          width={1376}
+          height={768}
+          className="w-full border border-white/10 bg-[#071525]"
+        />
+        <figcaption className="mt-2 max-w-2xl text-sm text-muted">
+          <span className="text-ink">{t.design.skins.title}. </span>
+          {t.design.skins.text}
+        </figcaption>
+      </figure>
     </Section>
   );
 }
