@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { LazyMotion, domAnimation } from "framer-motion";
+import { useEffect, type ReactNode } from "react";
+import { LazyMotion, domAnimation, m, useReducedMotion } from "framer-motion";
 import { Backdrop } from "./components/Backdrop";
 import { isDesignPage, isServerPage } from "./data/site";
 import { useI18n } from "./i18n/language";
@@ -14,6 +14,21 @@ import { Pricing } from "./sections/Pricing";
 import { Faq } from "./sections/Faq";
 import { Contact } from "./sections/Contact";
 import { Footer } from "./sections/Footer";
+
+function Enter({ children }: { children: ReactNode }) {
+  const reduce = useReducedMotion();
+  if (reduce) return children;
+
+  return (
+    <m.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </m.div>
+  );
+}
 
 export default function App() {
   const serverPage = isServerPage();
@@ -34,12 +49,17 @@ export default function App() {
       </a>
       <Navbar />
       {serverPage ? (
-        <Servers />
+        <Enter>
+          <Servers />
+        </Enter>
       ) : designPage ? (
-        <main id="contenuto">
-          <Design />
-        </main>
+        <Enter>
+          <main id="contenuto">
+            <Design />
+          </main>
+        </Enter>
       ) : (
+      <Enter>
       <main id="contenuto">
         <div id="top">
           <Hero />
@@ -51,6 +71,7 @@ export default function App() {
         <Faq />
         <Contact />
       </main>
+      </Enter>
       )}
       <Footer />
     </LazyMotion>

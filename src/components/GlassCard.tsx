@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useRef, type PointerEvent, type ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
@@ -11,13 +11,24 @@ type Props = {
 export function GlassCard({ children, className = "", cut = true, fill = true }: Props) {
   const shape = cut ? "cut" : "";
   const height = fill ? "h-full" : "";
+  const ref = useRef<HTMLDivElement>(null);
+
+  function move(event: PointerEvent<HTMLDivElement>) {
+    const node = ref.current;
+    if (!node || !window.matchMedia("(pointer: fine)").matches) return;
+    const box = node.getBoundingClientRect();
+    node.style.setProperty("--sx", `${event.clientX - box.left}px`);
+    node.style.setProperty("--sy", `${event.clientY - box.top}px`);
+  }
+
   return (
-    <div className={`relative ${height}`}>
+    <div ref={ref} onPointerMove={move} className={`group relative ${height}`}>
       <div
         aria-hidden="true"
         className={`pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/80 via-white/15 to-primary-glow/40 p-px ${shape}`}
       >
         <div className={`glass h-full w-full ${shape}`} />
+        <div className={`spot ${shape}`} />
       </div>
       <div className={`relative ${height} ${className}`}>{children}</div>
     </div>

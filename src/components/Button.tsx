@@ -27,7 +27,7 @@ export function Button({ href, children, variant = "primary", onClick }: Props) 
     <a
       href={href}
       onClick={click}
-      className={`inline-flex min-h-11 items-center justify-center px-5 text-[0.95rem] font-semibold transition-[background-color,border-color,box-shadow] duration-200 ${look}`}
+      className={`btn-lift inline-flex min-h-11 items-center justify-center px-5 text-[0.95rem] font-semibold ${look}`}
     >
       {children}
     </a>

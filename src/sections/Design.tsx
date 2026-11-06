@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Reveal } from "../components/Reveal";
 import { Section } from "../components/Section";
 import { useI18n } from "../i18n/language";
 
@@ -43,9 +44,10 @@ export function Design() {
     setOpen(shot);
   }
 
-  function frame(shot: Shot) {
+  function frame(shot: Shot, delay = 0) {
     return (
-      <figure className={shot.frame}>
+      <Reveal delay={delay} className={shot.frame}>
+      <figure>
         <button
           type="button"
           className="block w-full cursor-zoom-in border border-white/10 bg-[#12081F]"
@@ -59,6 +61,7 @@ export function Design() {
           {shot.text}
         </figcaption>
       </figure>
+      </Reveal>
     );
   }
 
@@ -66,14 +69,14 @@ export function Design() {
     <Section id="design" title={t.designTitle} lede={t.designLede} titleAs="h1">
       {frame(shots[0])}
       <ul className="mt-8 grid items-start gap-6 md:grid-cols-[minmax(0,180px)_minmax(0,1fr)_minmax(0,200px)]">
-        {row.map((shot) => (
-          <li key={shot.file}>{frame(shot)}</li>
+        {row.map((shot, index) => (
+          <li key={shot.file}>{frame(shot, index * 0.08)}</li>
         ))}
       </ul>
-      <div className="mt-8">{frame(shots[4])}</div>
+      <div className="mt-8">{frame(shots[4], 0.12)}</div>
       {open ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 motion-safe:animate-[pop_0.28s_cubic-bezier(0.22,1,0.36,1)_both]"
           role="dialog"
           aria-modal="true"
           aria-label={open.title}
@@ -90,7 +93,7 @@ export function Design() {
           <img
             src={src(open.file)}
             alt={open.text}
-            className="max-h-[85vh] max-w-full"
+            className="max-h-[85vh] max-w-full motion-safe:animate-[pop_0.4s_cubic-bezier(0.22,1,0.36,1)_both]"
             onClick={(event) => event.stopPropagation()}
           />
         </div>

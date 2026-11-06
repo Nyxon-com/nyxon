@@ -1,4 +1,5 @@
 import { Button } from "../components/Button";
+import { Reveal } from "../components/Reveal";
 import { GlassCard } from "../components/GlassCard";
 import { Section } from "../components/Section";
 import { packages } from "../data/packages";
@@ -10,8 +11,9 @@ export function Pricing() {
   return (
     <Section id="prezzi" title={t.pricingTitle} lede={t.pricingLede}>
       <ul className="grid gap-4 lg:grid-cols-3">
-        {packages.map((item) => (
+        {packages.map((item, index) => (
           <li key={item.id}>
+            <Reveal delay={index * 0.08} className="h-full">
             <GlassCard className="flex h-full flex-col p-6">
               <h3 className="font-display text-2xl font-semibold">{t.packages[item.id].title}</h3>
               <p className="mt-2 text-primary-glow">{t.onQuote}</p>
@@ -24,6 +26,7 @@ export function Pricing() {
                 <Button href={`?tipo=${item.tipo}#contatto`}>{t.cta}</Button>
               </div>
             </GlassCard>
+            </Reveal>
           </li>
         ))}
       </ul>
