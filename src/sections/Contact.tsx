@@ -22,7 +22,11 @@ export function Contact() {
     ["message", t.errors.message],
   ] as const;
   const [errors, setErrors] = useState<Errors>({});
-  const [ready, setReady] = useState(false);
+  const [phase, setPhase] = useState<"idle" | "sent">("idle");
+  const [draft, setDraft] = useState("");
+  const [gmail, setGmail] = useState("");
+  const [mail, setMail] = useState("");
+  const [copied, setCopied] = useState(false);
   const [type, setType] = useState(quoteType);
   const summary = useRef<HTMLDivElement>(null);
   const focusSummary = useRef(false);
@@ -56,15 +60,23 @@ export function Contact() {
     if (!chosen) next.type = fields[2][1];
     if (message.length < 12) next.message = fields[3][1];
     setErrors(next);
-    setReady(false);
+    setCopied(false);
     if (Object.keys(next).length > 0) {
+      setPhase("idle");
       focusSummary.current = true;
       return;
     }
+    if (String(data.get("company") ?? "").trim()) return;
     const kind = chosen === "sito" || chosen === "plugin" || chosen === "server" ? t.types[chosen] : chosen;
     const body = `${t.mail.name}: ${name}\n${t.mail.contact}: ${contact}\n${t.mail.type}: ${kind}\n\n${message}`;
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(`${t.mail.subject} ${kind}`)}&body=${encodeURIComponent(body)}`;
-    setReady(true);
+    const subject = `${t.mail.subject} ${kind}`;
+    const gmailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(site.email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setDraft(body);
+    setGmail(gmailHref);
+    setMail(mailHref);
+    setPhase("sent");
+    window.open(gmailHref, "_blank", "noopener,noreferrer");
   }
 
   return (
@@ -174,6 +186,7 @@ export function Contact() {
               ) : null}
             </label>
 
+            <input name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="sr-only" />
             <button
               type="submit"
               className="inline-flex min-h-11 items-center justify-center bg-primary px-5 font-semibold text-white shadow-glow transition-[background-color,box-shadow] duration-200 hover:bg-[#3d82ff]"
@@ -184,10 +197,26 @@ export function Contact() {
             <a href={`mailto:${site.email}?subject=${encodeURIComponent(t.mail.subject)}`} className="inline-flex min-h-11 items-center text-primary-glow hover:text-ink">
               {t.mailSkip}
             </a>
-            {ready ? (
-              <p role="status" className="text-sm text-muted">
-                {t.mailSent}
-              </p>
+            {phase === "sent" ? (
+              <div role="status" className="grid gap-2">
+                <p className="text-sm text-ink">{t.mailSent}</p>
+                <a href={gmail} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center bg-primary px-5 font-semibold text-white">
+                  {t.mailFail}
+                </a>
+                <a href={mail} className="inline-flex min-h-11 items-center text-primary-glow">
+                  {t.openMail}
+                </a>
+                <pre className="whitespace-pre-wrap border border-white/15 p-3 text-sm text-muted">{draft}</pre>
+                <button
+                  type="button"
+                  className="inline-flex min-h-11 items-center text-primary-glow"
+                  onClick={() => {
+                    void navigator.clipboard.writeText(`To: ${site.email}\n\n${draft}`).then(() => setCopied(true));
+                  }}
+                >
+                  {copied ? t.copied : t.copyMessage}
+                </button>
+              </div>
             ) : null}
           </form>
         </GlassCard>
