@@ -9,7 +9,8 @@ export function Footer() {
     <footer className="border-t border-white/10">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-4 py-8 sm:px-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <p className="font-display text-2xl font-semibold" translate="no">
+          <p className="inline-flex items-center gap-2 font-display text-2xl font-semibold" translate="no">
+            <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" width="32" height="32" className="h-8 w-8" />
             {site.name}
           </p>
           <Button href={sectionHref("#contatto")}>{t.cta}</Button>

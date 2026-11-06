@@ -21,7 +21,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-30 border-b border-white/10 bg-bg/70 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
-        <a href={isServerPage() || isDesignPage() ? homePath() : "#top"} className="font-display text-xl font-semibold" translate="no">
+        <a href={isServerPage() || isDesignPage() ? homePath() : "#top"} className="inline-flex items-center gap-2 font-display text-xl font-semibold" translate="no">
+          <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" width="28" height="28" className="h-7 w-7" />
           {site.name}
         </a>
         <nav aria-label={t.navLabel} className="hidden items-center gap-5 lg:flex">
