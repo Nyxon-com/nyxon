@@ -1,36 +1,15 @@
-import { useRef, type PointerEvent, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
   className?: string;
-  cut?: boolean;
   fill?: boolean;
 };
 
-/** Il velo scuro sotto il vetro tiene il testo sopra il 4.5:1 anche sui blob. */
-export function GlassCard({ children, className = "", cut = true, fill = true }: Props) {
-  const shape = cut ? "cut" : "";
+export function GlassCard({ children, className = "", fill = true }: Props) {
   const height = fill ? "h-full" : "";
-  const ref = useRef<HTMLDivElement>(null);
-
-  function move(event: PointerEvent<HTMLDivElement>) {
-    const node = ref.current;
-    if (!node || !window.matchMedia("(pointer: fine)").matches) return;
-    const box = node.getBoundingClientRect();
-    node.style.setProperty("--sx", `${event.clientX - box.left}px`);
-    node.style.setProperty("--sy", `${event.clientY - box.top}px`);
-  }
 
   return (
-    <div ref={ref} onPointerMove={move} className={`group relative ${height}`}>
-      <div
-        aria-hidden="true"
-        className={`pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/80 via-white/15 to-primary-glow/40 p-px ${shape}`}
-      >
-        <div className={`glass h-full w-full ${shape}`} />
-        <div className={`spot ${shape}`} />
-      </div>
-      <div className={`relative ${height} ${className}`}>{children}</div>
-    </div>
+    <div className={`rounded-lg border border-white/10 bg-[#0c0e14] ${height} ${className}`}>{children}</div>
   );
 }

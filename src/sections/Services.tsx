@@ -1,34 +1,32 @@
-import { Globe, Puzzle, Server } from "lucide-react";
 import { GlassCard } from "../components/GlassCard";
-import { Reveal } from "../components/Reveal";
 import { Section } from "../components/Section";
-import { services } from "../data/services";
 import { useI18n } from "../i18n/language";
-
-const icons = { globe: Globe, puzzle: Puzzle, server: Server };
 
 export function Services() {
   const { t } = useI18n();
 
   return (
     <Section id="servizi" title={t.servicesTitle} lede={t.servicesLede}>
-      <ul className="grid gap-4 md:grid-cols-3">
-        {services.map((service, index) => {
-          const Icon = icons[service.icon];
-          return (
-            <li key={service.id}>
-              <Reveal delay={index * 0.06} className="h-full">
-                <GlassCard className="h-full p-6">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-primary-glow">
-                    <Icon aria-hidden="true" />
-                  </span>
-                  <h3 className="mt-4 font-display text-2xl font-semibold">{t.services[service.id].title}</h3>
-                  <p className="mt-2 text-muted">{t.services[service.id].text}</p>
-                </GlassCard>
-              </Reveal>
-            </li>
-          );
-        })}
+      <ul className="grid gap-3 md:grid-cols-5 md:grid-rows-2">
+        <li className="md:col-span-3 md:row-span-2">
+          <GlassCard className="relative flex h-full min-h-72 flex-col justify-end overflow-hidden p-6 sm:p-8">
+            <span aria-hidden="true" className="absolute inset-x-0 top-0 h-0.5 bg-primary" />
+            <h3 className="font-display text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">{t.services.plugin.title}</h3>
+            <p className="mt-3 max-w-md text-muted">{t.services.plugin.text}</p>
+          </GlassCard>
+        </li>
+        <li className="md:col-span-2">
+          <GlassCard className="flex h-full min-h-36 flex-col justify-end p-6">
+            <h3 className="font-display text-2xl font-semibold">{t.services.siti.title}</h3>
+            <p className="mt-2 text-muted">{t.services.siti.text}</p>
+          </GlassCard>
+        </li>
+        <li className="md:col-span-2">
+          <GlassCard className="flex h-full min-h-36 flex-col justify-end p-6">
+            <h3 className="font-display text-2xl font-semibold">{t.services.server.title}</h3>
+            <p className="mt-2 text-muted">{t.services.server.text}</p>
+          </GlassCard>
+        </li>
       </ul>
     </Section>
   );

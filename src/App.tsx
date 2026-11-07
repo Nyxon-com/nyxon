@@ -1,6 +1,5 @@
 import { useEffect, type ReactNode } from "react";
 import { LazyMotion, domAnimation, m, useReducedMotion } from "framer-motion";
-import { Backdrop } from "./components/Backdrop";
 import { isDesignPage, isServerPage } from "./data/site";
 import { useI18n } from "./i18n/language";
 import { Servers } from "./pages/Servers";
@@ -43,7 +42,6 @@ export default function App() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <Backdrop />
       <a href="#contenuto" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-primary focus:px-3 focus:py-2">
         {t.skip}
       </a>
@@ -64,8 +62,8 @@ export default function App() {
         <div id="top">
           <Hero />
         </div>
-        <Services />
         <Projects />
+        <Services />
         <Process />
         <Pricing />
         <Faq />

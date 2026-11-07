@@ -15,7 +15,7 @@ export function Section({ id, title, lede, children, titleAs = "h2" }: Props) {
   return (
     <section id={id} className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
       <Reveal>
-        <Title className="max-w-3xl font-display text-[1.875rem] font-semibold sm:text-[2.25rem]">
+        <Title className="max-w-3xl font-display text-[clamp(1.75rem,1rem+1.4vw,2.25rem)] font-semibold leading-[1.2] tracking-[-0.03em]">
           {title}
         </Title>
       </Reveal>

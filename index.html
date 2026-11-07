@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nyxon — plugin Paper, server e siti</title>
+    <title>Nyxon — Paper plugins, servers and sites</title>
     <meta
       name="description"
-      content="Plugin Paper pubblici: modernCore, modernCrates, modernArena, modernStore. Server e siti su richiesta."
+      content="Public Paper plugins: modernCore, modernCrates, modernArena, modernStore. Servers and sites on request."
     />
     <meta name="theme-color" content="#05060A" />
-    <meta property="og:title" content="Nyxon — plugin Paper, server e siti" />
+    <meta property="og:title" content="Nyxon — Paper plugins, servers and sites" />
     <meta
       property="og:description"
-      content="modernCore, modernCrates, modernArena e modernStore. Server e siti su richiesta."
+      content="modernCore, modernCrates, modernArena and modernStore. Servers and sites on request."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="it_IT" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://nyxon-com.github.io/nyxon/" />
     <link rel="canonical" href="https://nyxon-com.github.io/nyxon/" />
     <script>
@@ -23,9 +23,8 @@
         var allowed = { it: 1, en: 1, es: 1, de: 1, fr: 1 };
         var q = new URLSearchParams(location.search).get("lang");
         var saved = "";
-        try { saved = localStorage.getItem("nyxon-lang") || ""; } catch (e) {}
-        var nav = (navigator.language || "it").slice(0, 2).toLowerCase();
-        var lang = allowed[q] ? q : allowed[saved] ? saved : allowed[nav] ? nav : "it";
+        try { saved = localStorage.getItem("nyxon.lang") || ""; } catch (e) {}
+        var lang = allowed[q] ? q : allowed[saved] ? saved : "en";
         var titles = {
           it: "Nyxon — plugin Paper, server e siti",
           en: "Nyxon — Paper plugins, servers and sites",

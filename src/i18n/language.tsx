@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 import { copy, isLang, type Lang } from "./copy";
 import { isDesignPage, isServerPage } from "../data/site";
 
-const STORAGE = "nyxon-lang";
+const STORAGE = "nyxon.lang";
 
 function storedLang() {
   try {
@@ -17,9 +17,7 @@ export function readLang(): Lang {
   if (isLang(query)) return query;
   const saved = storedLang();
   if (isLang(saved)) return saved;
-  const browser = navigator.language.slice(0, 2).toLowerCase();
-  if (isLang(browser)) return browser;
-  return "it";
+  return "en";
 }
 
 type Context = {

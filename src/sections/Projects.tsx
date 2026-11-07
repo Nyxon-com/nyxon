@@ -1,5 +1,4 @@
-import { useRef, useState, type MouseEvent, type ReactNode } from "react";
-import { useReducedMotion } from "framer-motion";
+import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { GlassCard } from "../components/GlassCard";
 import { Reveal } from "../components/Reveal";
@@ -7,35 +6,6 @@ import { Button } from "../components/Button";
 import { Section } from "../components/Section";
 import { categories, projects, type Category } from "../data/projects";
 import { useI18n } from "../i18n/language";
-
-function Tilt({ children }: { children: ReactNode }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
-
-  function move(event: MouseEvent<HTMLDivElement>) {
-    if (reduce) return;
-    const node = ref.current;
-    if (!node) return;
-    const box = node.getBoundingClientRect();
-    const x = (event.clientX - box.left) / box.width - 0.5;
-    const y = (event.clientY - box.top) / box.height - 0.5;
-    node.style.transition = "transform 90ms linear";
-    node.style.transform = `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) scale(1.02)`;
-  }
-
-  function leave() {
-    const node = ref.current;
-    if (!node) return;
-    node.style.transition = "transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)";
-    node.style.transform = "";
-  }
-
-  return (
-    <div ref={ref} onMouseMove={move} onMouseLeave={leave} className="h-full">
-      {children}
-    </div>
-  );
-}
 
 export function Projects() {
   const { t } = useI18n();
@@ -90,7 +60,6 @@ export function Projects() {
           {visible.map((project, index) => (
             <li key={project.slug}>
               <Reveal delay={index * 0.06} className="h-full">
-              <Tilt>
                 <GlassCard className="flex h-full flex-col p-6">
                   <p className="text-sm text-primary-glow" translate="no">
                     {project.title}
@@ -119,7 +88,6 @@ export function Projects() {
                     ) : null}
                   </div>
                 </GlassCard>
-              </Tilt>
               </Reveal>
             </li>
           ))}
