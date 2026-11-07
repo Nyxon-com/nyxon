@@ -10,6 +10,6 @@ export function GlassCard({ children, className = "", fill = true }: Props) {
   const height = fill ? "h-full" : "";
 
   return (
-    <div className={`rounded-lg border border-white/10 bg-[#0c0e14] ${height} ${className}`}>{children}</div>
+    <div className={`rounded-lg border border-white/15 bg-black ${height} ${className}`}>{children}</div>
   );
 }

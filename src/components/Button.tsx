@@ -11,8 +11,8 @@ type Props = {
 export function Button({ href, children, variant = "primary", onClick }: Props) {
   const look =
     variant === "primary"
-      ? "bg-primary text-white hover:bg-[#3d82ff]"
-      : "border border-white/15 text-ink hover:border-white/40";
+      ? "rounded-md bg-white text-black hover:bg-[#e7e7e7]"
+      : "rounded-md border border-white/30 text-ink hover:border-white";
 
   function click(event: MouseEvent<HTMLAnchorElement>) {
     onClick?.();

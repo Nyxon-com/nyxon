@@ -15,7 +15,7 @@ export function Servers() {
         {servers.map((server) => (
           <li key={server.slug}>
             <GlassCard className="flex h-full flex-col p-6">
-              <p className="text-sm text-primary-glow" translate="no">
+              <p className="text-sm text-[#d4d4d4]" translate="no">
                 {server.title}
               </p>
               <h2 className="mt-2 font-display text-[1.5rem] font-semibold leading-[1.45]">{t.serverCard.title}</h2>

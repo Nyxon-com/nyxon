@@ -16,7 +16,7 @@ export function Pricing() {
             <Reveal delay={index * 0.08} className="h-full">
             <GlassCard className="flex h-full flex-col p-6">
               <h3 className="font-display text-2xl font-semibold">{t.packages[item.id].title}</h3>
-              <p className="mt-2 text-primary-glow">{t.onQuote}</p>
+              <p className="mt-2 text-[#d4d4d4]">{t.onQuote}</p>
               <ul className="mt-4 flex-1 space-y-2 text-muted">
                 {t.packages[item.id].points.map((point) => (
                   <li key={point}>{point}</li>

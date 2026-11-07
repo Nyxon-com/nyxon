@@ -39,7 +39,7 @@ export function Projects() {
             onClick={() => choose(id)}
             className={`min-h-11 px-4 ${
               filter === id
-                ? "bg-primary text-white"
+                ? "rounded-md bg-white text-black"
                 : "border border-white/15 text-muted hover:text-ink"
             }`}
           >
@@ -61,7 +61,7 @@ export function Projects() {
             <li key={project.slug}>
               <Reveal delay={index * 0.06} className="h-full">
                 <GlassCard className="flex h-full flex-col p-6">
-                  <p className="text-sm text-primary-glow" translate="no">
+                  <p className="text-sm text-[#d4d4d4]" translate="no">
                     {project.title}
                   </p>
                   <h3 className="mt-2 font-display text-2xl font-semibold">{t.plugin[project.slug].title}</h3>

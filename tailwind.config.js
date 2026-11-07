@@ -4,12 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: "#05060A",
-        surface: "rgba(255,255,255,0.05)",
-        primary: "#1E6BFF",
-        "primary-glow": "#4D9BFF",
-        ink: "#F5F7FA",
-        muted: "#8A93A6",
+        bg: "#000000",
+        surface: "rgba(255,255,255,0.06)",
+        primary: "#FFFFFF",
+        "primary-glow": "#D4D4D4",
+        ink: "#F4F4F4",
+        muted: "#9A9A9A",
       },
       fontFamily: {
         sans: ["Outfit", "Segoe UI", "sans-serif"],

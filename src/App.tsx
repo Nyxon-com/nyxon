@@ -42,7 +42,17 @@ export default function App() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <a href="#contenuto" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-primary focus:px-3 focus:py-2">
+      <div className="relative">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_bottom,#000000_0%,#050505_42%,#0b0b0b_100%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[150vh] bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[length:88px_88px] [mask-image:linear-gradient(to_bottom,black_0%,black_62%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_62%,transparent_100%)]"
+      />
+      <div className="relative z-10">
+      <a href="#contenuto" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:px-3 focus:py-2 focus:text-black">
         {t.skip}
       </a>
       <Navbar />
@@ -72,6 +82,8 @@ export default function App() {
       </Enter>
       )}
       <Footer />
+      </div>
+      </div>
     </LazyMotion>
   );
 }

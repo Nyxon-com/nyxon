@@ -28,7 +28,7 @@ export function Process() {
           <span aria-hidden="true" className="absolute bottom-6 left-[13px] top-3 w-px bg-white/15" />
           {t.steps.map((step, index) => (
             <li key={step.title} className="flex gap-5 pb-8">
-              <span className="relative z-10 flex h-7 w-7 shrink-0 items-center justify-center bg-bg font-display text-sm text-primary-glow">
+              <span className="relative z-10 flex h-7 w-7 shrink-0 items-center justify-center bg-bg font-display text-sm text-[#d4d4d4]">
                 {index + 1}
               </span>
               <div>
@@ -98,7 +98,7 @@ function RisingStep({
 
   return (
     <m.li style={{ opacity }} className="flex h-48 gap-5">
-      <span className="relative z-10 flex h-7 w-7 shrink-0 items-center justify-center bg-bg font-display text-sm text-primary-glow">
+      <span className="relative z-10 flex h-7 w-7 shrink-0 items-center justify-center bg-bg font-display text-sm text-[#d4d4d4]">
         {index + 1}
       </span>
       <div className="min-w-0 pt-0.5">

@@ -11,7 +11,7 @@ export function Faq() {
           <details key={item.q} className="group py-1">
             <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between py-3 font-semibold">
               {item.q}
-              <span aria-hidden="true" className="text-primary-glow transition-transform duration-300 ease-out group-open:rotate-45">
+              <span aria-hidden="true" className="text-[#d4d4d4] transition-transform duration-300 ease-out group-open:rotate-45">
                 +
               </span>
             </summary>

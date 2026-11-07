@@ -189,27 +189,27 @@ export function Contact() {
             <input name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="sr-only" />
             <button
               type="submit"
-              className="inline-flex min-h-11 items-center justify-center bg-primary px-5 font-semibold text-white shadow-glow transition-[background-color,box-shadow] duration-200 hover:bg-[#3d82ff]"
+              className="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-5 font-semibold text-black hover:bg-[#e7e7e7]"
             >
               {t.cta}
             </button>
             <p className="text-sm text-ink">{t.mailHint}</p>
-            <a href={`mailto:${site.email}?subject=${encodeURIComponent(t.mail.subject)}`} className="inline-flex min-h-11 items-center text-primary-glow hover:text-ink">
+            <a href={`mailto:${site.email}?subject=${encodeURIComponent(t.mail.subject)}`} className="inline-flex min-h-11 items-center text-[#d4d4d4] hover:text-ink">
               {t.mailSkip}
             </a>
             {phase === "sent" ? (
               <div role="status" className="grid gap-2">
                 <p className="text-sm text-ink">{t.mailSent}</p>
-                <a href={gmail} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center bg-primary px-5 font-semibold text-white">
+                <a href={gmail} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-5 font-semibold text-black">
                   {t.mailFail}
                 </a>
-                <a href={mail} className="inline-flex min-h-11 items-center text-primary-glow">
+                <a href={mail} className="inline-flex min-h-11 items-center text-[#d4d4d4]">
                   {t.openMail}
                 </a>
                 <pre className="whitespace-pre-wrap border border-white/15 p-3 text-sm text-muted">{draft}</pre>
                 <button
                   type="button"
-                  className="inline-flex min-h-11 items-center text-primary-glow"
+                  className="inline-flex min-h-11 items-center text-[#d4d4d4]"
                   onClick={() => {
                     void navigator.clipboard.writeText(`To: ${site.email}\n\n${draft}`).then(() => setCopied(true));
                   }}
@@ -222,16 +222,16 @@ export function Contact() {
         </GlassCard>
 
         <div className="flex flex-col gap-4">
-          <a href={`mailto:${site.email}`} className="inline-flex min-h-11 items-center gap-2 text-ink hover:text-primary-glow">
+          <a href={`mailto:${site.email}`} className="inline-flex min-h-11 items-center gap-2 text-ink hover:text-white">
             <Mail aria-hidden="true" />
             {site.email}
           </a>
-          <a href={site.github} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 text-ink hover:text-primary-glow">
+          <a href={site.github} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 text-ink hover:text-white">
             <Github aria-hidden="true" />
             GitHub
           </a>
           {site.discord ? (
-            <a href={site.discord} className="inline-flex min-h-11 items-center gap-2 text-ink hover:text-primary-glow">
+            <a href={site.discord} className="inline-flex min-h-11 items-center gap-2 text-ink hover:text-white">
               Discord
             </a>
           ) : null}
